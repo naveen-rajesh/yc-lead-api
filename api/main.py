@@ -1,4 +1,4 @@
-# 🚀 YC Lead API — FULL UPDATED VERSION
+# 🚀 YC Lead API — MAIN FILE (CLEAN + PRODUCTION READY)
 
 import json
 import hashlib
@@ -11,7 +11,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, Depends, HTTPException, Query, Request
+from fastapi import FastAPI, Depends, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 
 # ── Data ─────────────────────────────────────
@@ -38,7 +38,6 @@ def load_keys() -> dict:
             "tier": "free",
             "credits_used": 0,
             "created_at": datetime.utcnow().isoformat(),
-            "calls": [],
         }
     }
     save_keys(default)
@@ -71,7 +70,7 @@ def check_rate_limit(key, tier):
 
 # ── App ─────────────────────────────────────
 
-app = FastAPI(title="YC Lead API", version="2.0")
+app = FastAPI(title="YC Startup Leads API", version="3.1")
 
 app.add_middleware(
     CORSMiddleware,
@@ -80,10 +79,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ── Auth ────────────────────────────────────
+# ── Auth (FIXED FOR RAPIDAPI) ─────────────────
 
 async def get_api_key(request: Request):
-    key = request.headers.get("X-API-Key") or request.query_params.get("api_key")
+    key = (
+        request.headers.get("X-API-Key")
+        or request.headers.get("X-RapidAPI-Key")
+        or request.query_params.get("api_key")
+    )
+
     if not key:
         raise HTTPException(401, "Missing API key")
 
@@ -104,8 +108,6 @@ async def get_api_key(request: Request):
     keys[key] = meta
     save_keys(keys)
 
-    print(f"[API CALL] {meta['email']} | tier={tier}")
-
     return meta
 
 # ── Routes ──────────────────────────────────
@@ -113,68 +115,80 @@ async def get_api_key(request: Request):
 @app.get("/")
 async def root():
     return {
-        "message": "YC Lead API",
-        "get_api_key": "/keys/create",
-        "usage": "Pass X-API-Key header"
+        "message": "YC Startup Leads API",
+        "endpoints": ["/companies", "/leads/high-value"]
     }
 
+
+# ✅ MAIN ENDPOINT
 @app.get("/companies")
 async def companies(
     q: Optional[str] = None,
     tech: Optional[str] = None,
     page: int = 1,
     limit: int = 20,
-    auth: dict = Depends(get_api_key)
+    auth: dict = Depends(get_api_key),
 ):
     data = load_companies()
 
+    # 🔍 Search filter
     if q:
-        data = [c for c in data if q.lower() in c["name"].lower()]
+        data = [c for c in data if q.lower() in c.get("name", "").lower()]
 
+    # ⚙️ Tech filter
     if tech:
-        data = [c for c in data if tech.lower() in " ".join(c.get("tech_stack", [])).lower()]
+        data = [
+            c for c in data
+            if tech.lower() in " ".join(c.get("tech_stack", [])).lower()
+        ]
 
+    # 📄 Pagination
     start = (page - 1) * limit
+
     return {
         "total": len(data),
-        "results": data[start:start+limit]
+        "results": data[start:start + limit]
     }
 
-@app.get("/company/{id}")
-async def get_company(id: int, auth: dict = Depends(get_api_key)):
-    for c in load_companies():
-        if c["id"] == id:
-            return c
-    raise HTTPException(404, "Not found")
 
-# 💰 HIGH VALUE ENDPOINT
+# 💰 MONEY ENDPOINT (CLEAN LEADS)
 @app.get("/leads/high-value")
 async def high_value(auth: dict = Depends(get_api_key)):
     data = load_companies()
-    leads = [
-        c for c in data
-        if c.get("website") and c.get("founders") and c.get("tech_stack")
-    ]
+
+    leads = []
+
+    for c in data:
+        name = c.get("name", "")
+
+        # ❌ Skip bad entries
+        if not name or "jobs" in name.lower():
+            continue
+
+        if len(name) > 50:
+            continue
+
+        # ✅ Keep only useful leads
+        if (
+            c.get("website")
+            and c.get("tech_stack")
+        ):
+            leads.append(c)
+
     return leads[:20]
 
-# 🔁 Trigger scraper remotely
-@app.post("/admin/scrape")
-async def trigger_scrape():
-    subprocess.Popen(["python3", "scraper/yc_scraper.py", "50"])
-    load_companies.cache_clear()
-    return {"status": "scraping started"}
 
-# 🩺 Health check endpoint
+# 🩺 HEALTH CHECK
 @app.get("/health")
 async def health():
-    data = load_companies()
     return {
         "status": "ok",
-        "companies": len(data),
+        "companies": len(load_companies()),
         "timestamp": datetime.utcnow().isoformat()
     }
 
-# 🔑 Create API key
+
+# 🔑 CREATE API KEY
 @app.post("/keys/create")
 async def create_key(name: str, email: str):
     raw = f"{email}-{secrets.token_hex(16)}"
@@ -192,6 +206,10 @@ async def create_key(name: str, email: str):
 
     return {"api_key": key}
 
-@app.get("/healthz")
-async def healthz():
-    return {"status": "ok"}
+
+# 🔁 TRIGGER SCRAPER
+@app.post("/admin/scrape")
+async def trigger_scrape():
+    subprocess.Popen(["python3", "scraper/yc_scraper.py", "50"])
+    load_companies.cache_clear()
+    return {"status": "scraping started"}
