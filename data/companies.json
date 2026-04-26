@@ -1,0 +1,415 @@
+[
+  {
+    "id": 1,
+    "name": "Airbnb",
+    "tagline": "Airbnb",
+    "description": "Book accommodations around the world. MARKETPLACE TRAVEL SAN FRANCISCO Founded in August of 2008 and based in San Francisco, California, Airbnb is a trusted community marketplace for people to list, discover, and book unique accommodations around the world \u2014 online or from a mobile phone. Whether an apartment for a night, a castle for a week, or a villa for a month, Airbnb connects people to unique travel experiences, at any price point, in more than 33,000 cities and 192 countries. And with world-class customer service and a growing community of users, Airbnb is the easiest way for people to ",
+    "batch": "Winter 2009",
+    "website": "http://airbnb.com",
+    "linkedin": "https://www.linkedin.com/in/brianchesky/",
+    "twitter": "https://twitter.com/bchesky",
+    "founders": [
+      "Garry Tan"
+    ],
+    "tags": [],
+    "tech_stack": [
+      "AWS",
+      "Nginx",
+      "React"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/airbnb",
+    "email": "",
+    "scraped_at": "2026-04-26T14:52:15.830577+00:00"
+  },
+  {
+    "id": 2,
+    "name": "Safe",
+    "tagline": "Hacker News",
+    "description": "Launch YC YC Deals YC Blog Contact People Careers",
+    "batch": "Summer 2013",
+    "website": "http://doordash.com",
+    "linkedin": "https://www.linkedin.com/company/doordash/",
+    "twitter": "http://twitter.com/doordash",
+    "founders": [],
+    "tags": [
+      "Marketplace",
+      "E-Commerce",
+      "San Francisco"
+    ],
+    "tech_stack": [
+      "Cloudflare"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/doordash",
+    "email": "",
+    "scraped_at": "2026-04-26T14:52:22.060628+00:00"
+  },
+  {
+    "id": 3,
+    "name": "Coinbase",
+    "tagline": "Coinbase",
+    "description": "Buy, sell, and manage cryptocurrencies. CRYPTO / WEB3 SAN FRANCISCO Founded in June of 2012, Coinbase is a digital currency wallet and platform where merchants and consumers can transact with new digital currencies like bitcoin, ethereum, and litecoin. Our vision is to bring more innovation, efficiency, and equality of opportunity to the world by building an open financial system. Our first step on that journey is making digital currency accessible and approachable for everyone. Two principles guide our efforts. First, be the most trusted company in our domain. Second, create user-focused prod",
+    "batch": "Summer 2012",
+    "website": "https://www.coinbase.com",
+    "linkedin": "https://www.linkedin.com/in/barmstrong/",
+    "twitter": "https://twitter.com/coinbase",
+    "founders": [
+      "Garry Tan"
+    ],
+    "tags": [],
+    "tech_stack": [
+      "AWS",
+      "React"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/coinbase",
+    "email": "",
+    "scraped_at": "2026-04-26T14:52:29.614039+00:00"
+  },
+  {
+    "id": 4,
+    "name": "Groww",
+    "tagline": "Groww",
+    "description": "Making financial services simple, transparent and delightful. INDIA INVESTING Groww aims to empower people in India by making financial services simple, transparent and delightful. By leveraging technology, we build reliable and accessible financial services. Groww is India's largest stock broker (in terms of active NSE clients) and the largest distributor of mutual fund SIPs. Founders Eye $1.9 Billion Wealth Boost in India\u2019s Groww IPO - Bloomberg",
+    "batch": "Winter 2018",
+    "website": "https://groww.in",
+    "linkedin": "https://www.linkedin.com/company/groww.in/",
+    "twitter": "https://twitter.com/_groww",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "AWS",
+      "Cloudflare",
+      "Firebase",
+      "Next.js",
+      "React"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/groww",
+    "email": "",
+    "scraped_at": "2026-04-26T14:52:36.241917+00:00"
+  },
+  {
+    "id": 5,
+    "name": "Oklo",
+    "tagline": "Oklo",
+    "description": "Emission free, always on power from advanced fission power plants. SMALL MODULAR REACTORS CLIMATE SANTA CLARA About Oklo Inc.: Oklo Inc. (Oklo) is developing advanced fission power plants to provide emission-free, reliable, and affordable energy.",
+    "batch": "Summer 2014",
+    "website": "http://oklo.com",
+    "linkedin": "http://linkedin.com/in/jacob-dewitte-90062132",
+    "twitter": "https://www.twitter.com/caorilne",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "AWS",
+      "React",
+      "TypeScript"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/oklo",
+    "email": "",
+    "scraped_at": "2026-04-26T14:52:47.946900+00:00"
+  },
+  {
+    "id": 6,
+    "name": "Instacart",
+    "tagline": "Instacart",
+    "description": "Marketplace for grocery delivery and pickup GROCERY DELIVERY E-COMMERCE SAN FRANCISCO Instacart is the North American leader in online grocery and one of the fastest-growing companies in e-commerce. Instacart\u2019s same-day delivery and pickup services bring fresh groceries and everyday essentials to busy people and families across the U.S. and Canada in as fast as an hour. Since its founding in 2012, Instacart has become an essential service for millions of families, while also serving as an immediate, flexible earnings opportunity for hundreds of thousands of shoppers across North America. The c",
+    "batch": "Summer 2012",
+    "website": "https://www.instacart.com",
+    "linkedin": "https://www.linkedin.com/in/apoorvamehta/",
+    "twitter": "https://twitter.com/apoorva_mehta",
+    "founders": [
+      "Garry Tan"
+    ],
+    "tags": [],
+    "tech_stack": [
+      "AWS",
+      "Nginx",
+      "React"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/instacart",
+    "email": "",
+    "scraped_at": "2026-04-26T14:52:56.408797+00:00"
+  },
+  {
+    "id": 7,
+    "name": "Meesho",
+    "tagline": "Meesho",
+    "description": "Democratizing internet commerce for everyone in India E-COMMERCE RETAIL Meesho is India\u2019s only true online marketplace, altering the status quo to make e-commerce inclusive and accessible for the next billion users. With a vision to enable 100 million small businesses, including individual entrepreneurs, to succeed online, Meesho is democratising internet commerce and bringing a range of products and new customers online. The Meesho marketplace provides sellers access to millions of customers, selections from over 30 categories, pan-India logistics, payment services and customer support capabi",
+    "batch": "Summer 2016",
+    "website": "http://www.meesho.com",
+    "linkedin": "https://www.linkedin.com/company/meesho/",
+    "twitter": "https://twitter.com/Meesho_Official",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [],
+    "yc_url": "https://www.ycombinator.com/companies/meesho",
+    "email": "",
+    "scraped_at": "2026-04-26T14:53:02.324985+00:00"
+  },
+  {
+    "id": 8,
+    "name": "Safe",
+    "tagline": "Hacker News",
+    "description": "Launch YC YC Deals YC Blog Contact People Careers",
+    "batch": "Summer 2014",
+    "website": "http://rigetti.com",
+    "linkedin": "https://www.linkedin.com/in/chad-rigetti-9891562",
+    "twitter": "https://twitter.com/ChadRigetti",
+    "founders": [],
+    "tags": [
+      "Quantum Computing",
+      "Berkeley"
+    ],
+    "tech_stack": [
+      "AWS",
+      "Cloudflare",
+      "Nginx",
+      "Segment"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/rigetti-computing",
+    "email": "",
+    "scraped_at": "2026-04-26T14:53:11.144654+00:00"
+  },
+  {
+    "id": 9,
+    "name": "Dropbox",
+    "tagline": "Dropbox",
+    "description": "Backup and share files in the cloud. SAN FRANCISCO Dropbox is building the world\u2019s first smart workspace. Back in 2007, making work better for people meant designing a simpler way to keep files in sync. Today, it means designing products that reduce busywork so you can focus on the work that matters. Most \u201cproductivity tools\u201d get in your way. They constantly ping, distract, and disrupt your team\u2019s flow, so you spend your days switching between apps and tracking down feedback. It\u2019s busywork, not the meaningful stuff. We want to change this. We believe there\u2019s a more enlightened way to work. Dro",
+    "batch": "Summer 2007",
+    "website": "http://dropbox.com",
+    "linkedin": "https://www.linkedin.com/in/drewhouston/",
+    "twitter": "https://twitter.com/drewhouston",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "React",
+      "TypeScript"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/dropbox",
+    "email": "",
+    "scraped_at": "2026-04-26T14:53:19.223804+00:00"
+  },
+  {
+    "id": 10,
+    "name": "Safe",
+    "tagline": "Hacker News",
+    "description": "Launch YC YC Deals YC Blog Contact People Careers",
+    "batch": "Winter 2015",
+    "website": "https://www.equipmentshare.com",
+    "linkedin": "https://linkedin.com/in/bradsiegler",
+    "twitter": "https://twitter.com/BradSiegler",
+    "founders": [],
+    "tags": [
+      "Construction"
+    ],
+    "tech_stack": [
+      "AWS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/equipmentshare",
+    "email": "",
+    "scraped_at": "2026-04-26T14:53:27.534269+00:00"
+  },
+  {
+    "id": 11,
+    "name": "Jobs at BillionToOne",
+    "tagline": "View all jobs",
+    "description": "Senior Software Engineer, Digital Experiences (Prenatal) Menlo Park, CA, US $190K - $211K 6+ Years Apply Now \u203a Senior Software Engineer, Oncology",
+    "batch": "Summer 2017",
+    "website": "https://www.billiontoone.com",
+    "linkedin": "https://www.linkedin.com/company/billiontoone/",
+    "twitter": "https://twitter.com/billiontooneinc?lang=en",
+    "founders": [
+      "Jared Friedman"
+    ],
+    "tags": [
+      "Diagnostics",
+      "Genomics",
+      "Menlo Park"
+    ],
+    "tech_stack": [
+      "AWS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/billiontoone",
+    "email": "",
+    "scraped_at": "2026-04-26T13:58:32.723354+00:00"
+  },
+  {
+    "id": 12,
+    "name": "San Francisco",
+    "tagline": "Founders",
+    "description": "Sid Sijbrandij Founder/CEO Dmytro Zaporozhets Founder/CTO Footer Y Combinator",
+    "batch": "Winter 2015",
+    "website": "http://gitlab.com/",
+    "linkedin": "https://www.linkedin.com/company/gitlab-com",
+    "twitter": "https://twitter.com/gitlab",
+    "founders": [],
+    "tags": [
+      "Developer Tools",
+      "Devsecops",
+      "Open Source",
+      "San Francisco"
+    ],
+    "tech_stack": [
+      "React",
+      "TypeScript"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/gitlab",
+    "email": "",
+    "scraped_at": "2026-04-26T13:58:42.044316+00:00"
+  },
+  {
+    "id": 13,
+    "name": "Matterport",
+    "tagline": "Matterport",
+    "description": "Turn physical objects and environments into 3D models in seconds. COMPUTER VISION SUNNYVALE Matterport is an immersive media technology company that is shaking up the 3D / VR world. Our team has built the first end-to-end system for creating, modifying, distributing, and navigating immersive 3D and virtual reality (VR) versions of real-world spaces on web and mobile devices. Matterport offers the world's most inexpensive and simplest way to capture 3D spaces. Our products include: - Matterport Pro Camera for capturing real spaces in 3D. It collects accurate visual and spatial data to map entir",
+    "batch": "Winter 2012",
+    "website": "http://matterport.com",
+    "linkedin": "https://www.linkedin.com/in/david-gausebeck-ab23015",
+    "twitter": "https://twitter.com/ycombinator",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "Next.js",
+      "Segment",
+      "Vercel"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/matterport",
+    "email": "",
+    "scraped_at": "2026-04-26T13:58:49.629678+00:00"
+  },
+  {
+    "id": 14,
+    "name": "Amplitude",
+    "tagline": "Amplitude",
+    "description": "Digital Analytics Platform DEVELOPER TOOLS B2B ANALYTICS MARKETING DATA VISUALIZATION",
+    "batch": "Winter 2012",
+    "website": "https://amplitude.com",
+    "linkedin": "https://www.linkedin.com/in/spenserskates",
+    "twitter": "https://x.com/spenserskates",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "Next.js",
+      "Nginx",
+      "React",
+      "Vercel"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/amplitude",
+    "email": "",
+    "scraped_at": "2026-04-26T13:58:58.064020+00:00"
+  },
+  {
+    "id": 15,
+    "name": "Active Founders",
+    "tagline": "Alex Solomon",
+    "description": "Founder/CTO Co-Founder, PagerDuty. Alex started PagerDuty in 2009 as founding CEO, leading the company through several stages of growth, including product-market fit, fundraising, and expansion of the product vision. He replaced himself in 2016 and stepped into the role of CTO (until 2020), and later, GM of Platform (until 2024). He has served on the PagerDuty board of directors since 2010. Toronto-founded PagerDuty goes public, sees stocks jump in market debut | BetaKit Apr 12, 2019 PagerDuty Batch:",
+    "batch": "Summer 2010",
+    "website": "http://pagerduty.com",
+    "linkedin": "https://www.linkedin.com/in/alexsolo",
+    "twitter": "https://twitter.com/ycombinator",
+    "founders": [],
+    "tags": [
+      "Devops",
+      "Monitoring",
+      "San Francisco"
+    ],
+    "tech_stack": [
+      "AWS",
+      "Next.js",
+      "React"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/pagerduty",
+    "email": "",
+    "scraped_at": "2026-04-26T13:59:07.513913+00:00"
+  },
+  {
+    "id": 16,
+    "name": "Ginkgo Bioworks",
+    "tagline": "Ginkgo Bioworks",
+    "description": "Our mission is to make biology easier to engineer. SYNTHETIC BIOLOGY DIAGNOSTICS AUTOMATION BOSTON Ginkgo Bioworks is the organism company. We design custom organisms for customers across multiple markets. We build our foundries to scale the process of organism engineering using software and hardware automation. Organism engineers at Ginkgo learn from nature to develop new organisms that replace technology with biology.",
+    "batch": "Summer 2014",
+    "website": "http://ginkgobioworks.com",
+    "linkedin": "https://www.linkedin.com/company/ginkgo-bioworks/",
+    "twitter": "https://twitter.com/Ginkgo",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "AWS",
+      "Cloudflare",
+      "HubSpot"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/ginkgo-bioworks",
+    "email": "",
+    "scraped_at": "2026-04-26T13:59:15.160199+00:00"
+  },
+  {
+    "id": 17,
+    "name": "Weave",
+    "tagline": "Weave",
+    "description": "Customer communication and payments platform. SAAS As the pace of innovation continues, it is growing more difficult to see the value of technology. Often meaningful information is inaccessible at the time it would be most beneficial. Weave threads together data, software and communication platforms to build stronger relationships at the point of contact by making valuable information instantly available in simple and intuitive formats. This delivers improved productivity, better collaboration and greater insights making it easier to meet the needs of patients and to build better business and ",
+    "batch": "Winter 2014",
+    "website": "http://getweave.com",
+    "linkedin": "https://www.linkedin.com/in/brandonrodman",
+    "twitter": "https://twitter.com/ycombinator",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "AWS",
+      "Next.js",
+      "React",
+      "Vercel"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/weave",
+    "email": "",
+    "scraped_at": "2026-04-26T13:59:23.385950+00:00"
+  },
+  {
+    "id": 18,
+    "name": "Pardes Biosciences",
+    "tagline": "Pardes Biosciences",
+    "description": "We break viruses BIOTECH THERAPEUTICS SAN FRANCISCO We make oral drugs to treat and prevent viral infections - like COVID-19. Active Founders",
+    "batch": "Summer 2020",
+    "website": "http://www.pardesbio.com",
+    "linkedin": "https://linkedin.com/in/urilopatin",
+    "twitter": "https://twitter.com/ycombinator",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [],
+    "yc_url": "https://www.ycombinator.com/companies/pardes-bio",
+    "email": "",
+    "scraped_at": "2026-04-26T13:59:30.522144+00:00"
+  },
+  {
+    "id": 19,
+    "name": "Embark Trucks",
+    "tagline": "Embark Trucks",
+    "description": "Self-driving semi trucks. AUTONOMOUS TRUCKING SAN FRANCISCO Embark Technology develops self-driving truck software. Embark was the first self-driving truck company to achieve an autonomous coast-to-coast drive, the first to reach 100,000 miles driven on public roads, and the first to open a network of transfer points. Embark went public on NASDAQ in 2021 and was acquired by Applied Intuition in 2023.",
+    "batch": "Winter 2016",
+    "website": "http://embarktrucks.com",
+    "linkedin": "https://ca.linkedin.com/in/rodriguesalex",
+    "twitter": "https://twitter.com/alexrodriguesca",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [],
+    "yc_url": "https://www.ycombinator.com/companies/embark-trucks",
+    "email": "",
+    "scraped_at": "2026-04-26T13:59:37.929936+00:00"
+  },
+  {
+    "id": 20,
+    "name": "Momentus",
+    "tagline": "Momentus",
+    "description": "The space infrastructure services company COMMERCIAL SPACE LAUNCH SOLAR POWER SPACE EXPLORATION SANTA CLARA Momentus is a space infrastructure services company. As a first mover, Momentus will offer the most basic, foundational services that enable businesses to flourish in space. With their experienced team of aerospace, propulsion, and robotics engineers, Momentus makes and operates cost-effective and energy-efficient in-space transport and service vehicles that utilize water plasma propulsion technology. Momentus has service agreements in place with numerous private satellite companies, gov",
+    "batch": "Summer 2018",
+    "website": "https://momentus.space",
+    "linkedin": "https://linkedin.com/in/kokorich",
+    "twitter": "https://twitter.com/mkokorich",
+    "founders": [],
+    "tags": [],
+    "tech_stack": [
+      "Cloudflare",
+      "Segment"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/momentus",
+    "email": "",
+    "scraped_at": "2026-04-26T13:59:45.740303+00:00"
+  }
+]

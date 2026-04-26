@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "name": "Airbnb",
+    "tagline": "Book accommodations around the world.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "WINTER 2009",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/in/brianchesky/",
+    "twitter": "https://twitter.com/bchesky",
+    "founders": [
+      "Garry Tan"
+    ],
+    "tags": [
+      "Winter 2009",
+      "Public",
+      "Marketplace",
+      "Travel",
+      "San Francisco"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/airbnb",
+    "scraped_at": "2026-04-26T15:02:56.865702+00:00"
+  },
+  {
+    "id": 2,
+    "name": "DoorDash",
+    "tagline": "Read more at blog.doordash.com, and find us on Glassdoor.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "SUMMER 2013",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/company/doordash/",
+    "twitter": "http://twitter.com/doordash",
+    "founders": [],
+    "tags": [
+      "Summer 2013",
+      "Public",
+      "Marketplace",
+      "E-Commerce",
+      "San Francisco"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/doordash",
+    "scraped_at": "2026-04-26T15:03:04.176103+00:00"
+  },
+  {
+    "id": 3,
+    "name": "Coinbase",
+    "tagline": "Buy, sell, and manage cryptocurrencies.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "SUMMER 2012",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/in/barmstrong/",
+    "twitter": "https://twitter.com/coinbase",
+    "founders": [
+      "Garry Tan"
+    ],
+    "tags": [
+      "Summer 2012",
+      "Public",
+      "Crypto / Web3",
+      "San Francisco"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/coinbase",
+    "scraped_at": "2026-04-26T15:03:11.226049+00:00"
+  },
+  {
+    "id": 4,
+    "name": "Groww",
+    "tagline": "Making financial services simple, transparent and delightful.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "WINTER 2018",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/company/groww.in/",
+    "twitter": "https://twitter.com/_groww",
+    "founders": [],
+    "tags": [
+      "Winter 2018",
+      "Public",
+      "India",
+      "Investing"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/groww",
+    "scraped_at": "2026-04-26T15:03:19.251541+00:00"
+  },
+  {
+    "id": 5,
+    "name": "Oklo",
+    "tagline": "Emission free, always on power from advanced fission power plants.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "SUMMER 2014",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "http://linkedin.com/in/jacob-dewitte-90062132",
+    "twitter": "https://www.twitter.com/caorilne",
+    "founders": [],
+    "tags": [
+      "Summer 2014",
+      "Public",
+      "Small Modular Reactors",
+      "Climate",
+      "Santa Clara"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/oklo",
+    "scraped_at": "2026-04-26T15:03:26.788512+00:00"
+  },
+  {
+    "id": 6,
+    "name": "Instacart",
+    "tagline": "Marketplace for grocery delivery and pickup",
+    "description": "About Companies Library Partners Resources",
+    "batch": "SUMMER 2012",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/in/apoorvamehta/",
+    "twitter": "https://twitter.com/apoorva_mehta",
+    "founders": [
+      "Garry Tan"
+    ],
+    "tags": [
+      "Summer 2012",
+      "Public",
+      "Grocery",
+      "Delivery",
+      "E-Commerce"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/instacart",
+    "scraped_at": "2026-04-26T15:03:33.984894+00:00"
+  },
+  {
+    "id": 7,
+    "name": "Meesho",
+    "tagline": "Democratizing internet commerce for everyone in India",
+    "description": "About Companies Library Partners Resources",
+    "batch": "SUMMER 2016",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/company/meesho/",
+    "twitter": "https://twitter.com/Meesho_Official",
+    "founders": [],
+    "tags": [
+      "Summer 2016",
+      "Public",
+      "E-Commerce",
+      "Retail"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/meesho",
+    "scraped_at": "2026-04-26T15:03:42.075916+00:00"
+  },
+  {
+    "id": 8,
+    "name": "Rigetti Computing",
+    "tagline": "Quantum coherent supercomputing.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "SUMMER 2014",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/in/chad-rigetti-9891562",
+    "twitter": "https://twitter.com/ChadRigetti",
+    "founders": [],
+    "tags": [
+      "Summer 2014",
+      "Public",
+      "Quantum Computing",
+      "Berkeley"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/rigetti-computing",
+    "scraped_at": "2026-04-26T15:03:50.200931+00:00"
+  },
+  {
+    "id": 9,
+    "name": "Dropbox",
+    "tagline": "Backup and share files in the cloud.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "SUMMER 2007",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://www.linkedin.com/in/drewhouston/",
+    "twitter": "http://dropbox.com/",
+    "founders": [],
+    "tags": [
+      "Summer 2007",
+      "Public",
+      "San Francisco"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/dropbox",
+    "scraped_at": "2026-04-26T15:03:57.549909+00:00"
+  },
+  {
+    "id": 10,
+    "name": "EquipmentShare",
+    "tagline": "Cloud solutions for the construction industry.",
+    "description": "About Companies Library Partners Resources",
+    "batch": "WINTER 2015",
+    "website": "https://twitter.com/ycombinator",
+    "linkedin": "https://linkedin.com/in/bradsiegler",
+    "twitter": "https://twitter.com/BradSiegler",
+    "founders": [],
+    "tags": [
+      "Winter 2015",
+      "Public",
+      "Construction",
+      "$120K - $170K",
+      "$90K - $125K"
+    ],
+    "emails": [],
+    "tech_stack": [
+      "React",
+      "AWS",
+      "Next.js"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/equipmentshare",
+    "scraped_at": "2026-04-26T15:04:04.790651+00:00"
+  }
+]
