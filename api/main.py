@@ -1,4 +1,4 @@
-# 🚀 YC Lead API — UPDATED PRODUCTION VERSION
+# 🚀 YC Lead API — FULL UPDATED VERSION
 
 import json
 import hashlib
@@ -164,6 +164,16 @@ async def trigger_scrape():
     load_companies.cache_clear()
     return {"status": "scraping started"}
 
+# 🩺 Health check endpoint
+@app.get("/health")
+async def health():
+    data = load_companies()
+    return {
+        "status": "ok",
+        "companies": len(data),
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
 # 🔑 Create API key
 @app.post("/keys/create")
 async def create_key(name: str, email: str):
@@ -182,9 +192,6 @@ async def create_key(name: str, email: str):
 
     return {"api_key": key}
 
-@app.get("/health")
-async def health():
-    return {
-        "status": "ok",
-        "companies": len(load_companies())
-    }
+@app.get("/healthz")
+async def healthz():
+    return {"status": "ok"}
