@@ -1,218 +1,118 @@
-# 🚀 PRODUCTION-READY YC SCRAPER (API-READY, HIGH-VALUE DATA)
-
 import asyncio
 import json
-import re
-import random
-import logging
-from datetime import datetime, timezone
-from pathlib import Path
+from datetime import datetime
 from playwright.async_api import async_playwright
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-log = logging.getLogger(__name__)
+OUTPUT_FILE = "data/companies.json"
+BASE_URL = "https://www.ycombinator.com/companies"
 
-DATA_FILE = Path(__file__).parent / "companies.json"
-
-# XPath for company name (primary)
-NAME_XPATH = "/html/body/div/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div"
-
-# Regex
-BATCH_RE = re.compile(r"(Winter|Summer|Spring|Fall)\s+\d{4}", re.I)
-EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
-
-# -------- NAME EXTRACTION --------
-async def get_company_name(page, slug):
-    try:
-        el = page.locator(f"xpath={NAME_XPATH}")
-        if await el.count() > 0:
-            text = (await el.first.inner_text()).strip()
-            if text and not text.lower().startswith("jobs") and "founder" not in text.lower():
-                return text
-    except:
-        pass
-
-    try:
-        h1 = page.locator("h1")
-        if await h1.count() > 0:
-            return (await h1.first.inner_text()).strip()
-    except:
-        pass
-
-    return slug.replace("-", " ").title()
-
-
-# -------- PARSE TEXT DATA --------
-def parse_text(text):
-    lines = [l.strip() for l in text.splitlines() if l.strip()]
-
-    tagline = ""
-    batch = ""
-    description = ""
-    tags = []
-
-    for line in lines:
-        if not batch and BATCH_RE.search(line):
-            batch = line
-
-        if not tagline and 20 < len(line) < 120 and not line.startswith("http"):
-            tagline = line
-
-        if line.isupper() and len(line) < 40:
-            tags.append(line.title())
-
-    description = " ".join(lines[:5])
-
-    return tagline, batch, description, tags[:5]
-
-
-# -------- EMAIL SCRAPER --------
-async def extract_emails(ctx, url):
-    emails = set()
-    try:
-        page = await ctx.new_page()
-        await page.goto(url, timeout=15000)
-        html = await page.content()
-        found = EMAIL_RE.findall(html)
-        for e in found:
-            if not e.endswith((".png", ".jpg")):
-                emails.add(e)
-        await page.close()
-    except:
-        pass
-    return list(emails)[:3]
-
-
-# -------- TECH DETECTION --------
-async def detect_tech(ctx, url):
-    tech = set()
-    try:
-        page = await ctx.new_page()
-        resp = await page.goto(url, timeout=15000)
-        html = (await page.content()).lower()
-
-        if "react" in html:
-            tech.add("React")
-        if "next" in html:
-            tech.add("Next.js")
-        if "cloudflare" in html:
-            tech.add("Cloudflare")
-        if "aws" in html or "amazonaws" in html:
-            tech.add("AWS")
-
-        if resp:
-            server = resp.headers.get("server", "").lower()
-            if "nginx" in server:
-                tech.add("Nginx")
-
-        await page.close()
-    except:
-        pass
-    return list(tech)
-
-
-# -------- MAIN SCRAPER --------
-async def scrape(batch_size=20):
+async def scrape(limit=50):
     results = []
 
-    async with async_playwright() as pw:
-        browser = await pw.chromium.launch(headless=True)
-        ctx = await browser.new_context()
-        page = await ctx.new_page()
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
 
-        await page.goto("https://www.ycombinator.com/companies")
-        await page.wait_for_timeout(4000)
+        print("Loading YC companies page...")
+        await page.goto(BASE_URL)
+        await page.wait_for_timeout(5000)
 
-        for _ in range(8):
-            await page.keyboard.press("End")
-            await page.wait_for_timeout(1200)
+        links = await page.eval_on_selector_all(
+            "a[href*='/companies/']",
+            "elements => elements.map(e => e.href)"
+        )
 
-        hrefs = await page.evaluate("""() => {
-            const links = [];
-            document.querySelectorAll('a[href]').forEach(a => {
-                const h = a.getAttribute('href');
-                if (h && h.startsWith('/companies/')) links.push(h);
-            });
-            return [...new Set(links)];
-        }""")
+        links = list(dict.fromkeys(links))[:limit]
 
-        for i, href in enumerate(hrefs[:batch_size]):
-            url = "https://www.ycombinator.com" + href
-            slug = href.split("/")[-1]
-
+        for i, url in enumerate(links, 1):
             try:
-                log.info(f"[{i+1}] {url}")
+                print(f"[{i}/{limit}] Scraping {url}")
                 await page.goto(url)
-                await page.wait_for_timeout(2500)
+                await page.wait_for_timeout(3000)
 
-                name = await get_company_name(page, slug)
-                body = await page.evaluate("() => document.body.innerText")
+                # 🔥 FIX 1: CLEAN NAME FROM URL
+                slug = url.split("/")[-1]
+                name = slug.replace("-", " ").title()
 
-                tagline, batch, description, tags = parse_text(body)
+                # ❌ Skip junk entries
+                if "jobs" in name.lower():
+                    continue
 
-                website = await page.evaluate("""() => {
-                    const a = document.querySelector('a[rel="noreferrer"]');
-                    return a ? a.href : '';
+                # 🔥 FIX 2: TAGLINE CLEAN
+                tagline = await page.evaluate("""() => {
+                    const el = document.querySelector('h2');
+                    return el ? el.innerText.trim() : "";
                 }""")
 
-                linkedin = await page.evaluate("""() => {
-                    const a = document.querySelector('a[href*="linkedin.com"]');
-                    return a ? a.href : '';
+                # 🔥 FIX 3: DESCRIPTION
+                description = await page.evaluate("""() => {
+                    const el = document.querySelector('p');
+                    return el ? el.innerText.trim() : "";
                 }""")
 
-                twitter = await page.evaluate("""() => {
-                    const a = document.querySelector('a[href*="twitter.com"], a[href*="x.com"]');
-                    return a ? a.href : '';
-                }""")
-
+                # 🔥 FIX 4: FOUNDERS (CLEAN)
                 founders = await page.evaluate("""() => {
-                    const arr = [];
+                    const names = [];
                     document.querySelectorAll('a[href*="/people/"]').forEach(a => {
-                        const t = a.innerText.trim();
-                        if (t.length < 50) arr.push(t);
+                        const text = a.innerText.trim();
+                        if (
+                            text &&
+                            text.length < 40 &&
+                            text.split(" ").length <= 3 &&
+                            !text.toLowerCase().includes("yc")
+                        ) {
+                            names.push(text);
+                        }
                     });
-                    return [...new Set(arr)].slice(0,5);
+                    return [...new Set(names)].slice(0, 3);
                 }""")
 
-                emails = []
-                tech = []
+                # 🔥 FIX 5: WEBSITE
+                website = await page.evaluate("""() => {
+                    const a = document.querySelector('a[href^="http"]');
+                    return a ? a.href : "";
+                }""")
 
-                if website:
-                    emails = await extract_emails(ctx, website)
-                    tech = await detect_tech(ctx, website)
+                # 🔥 FIX 6: TECH STACK (basic detection)
+                tech_stack = []
+                if description:
+                    if "react" in description.lower(): tech_stack.append("React")
+                    if "aws" in description.lower(): tech_stack.append("AWS")
+                    if "cloud" in description.lower(): tech_stack.append("Cloud")
 
                 company = {
-                    "id": i+1,
+                    "id": i,
                     "name": name,
                     "tagline": tagline,
                     "description": description,
-                    "batch": batch,
+                    "batch": "",
                     "website": website,
-                    "linkedin": linkedin,
-                    "twitter": twitter,
+                    "linkedin": "",
+                    "twitter": "",
                     "founders": founders,
-                    "tags": tags,
-                    "emails": emails,
-                    "tech_stack": tech,
+                    "tags": [],
+                    "tech_stack": tech_stack,
                     "yc_url": url,
-                    "scraped_at": datetime.now(timezone.utc).isoformat()
+                    "email": "",
+                    "scraped_at": datetime.utcnow().isoformat(),
                 }
 
                 results.append(company)
-                log.info(f"✓ {name} | {batch}")
-
-                await asyncio.sleep(random.uniform(0.5,1.2))
 
             except Exception as e:
-                log.error(f"✗ {url}: {e}")
+                print("Error:", e)
+                continue
 
         await browser.close()
 
-    with open(DATA_FILE, "w") as f:
+    # Save
+    with open(OUTPUT_FILE, "w") as f:
         json.dump(results, f, indent=2)
 
-    log.info(f"Saved {len(results)} companies")
+    print(f"Saved {len(results)} companies")
 
 
 if __name__ == "__main__":
-    asyncio.run(scrape(10))
+    import sys
+    limit = int(sys.argv[1]) if len(sys.argv) > 1 else 50
+    asyncio.run(scrape(limit))

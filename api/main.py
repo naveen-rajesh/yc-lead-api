@@ -1,5 +1,3 @@
-# 🚀 YC Lead API — MAIN FILE (CLEAN + PRODUCTION READY)
-
 import json
 import hashlib
 import secrets
@@ -137,8 +135,7 @@ async def companies(
 
     # ⚙️ Tech filter
     if tech:
-        data = [
-            c for c in data
+        data = [c for c in data
             if tech.lower() in " ".join(c.get("tech_stack", [])).lower()
         ]
 
