@@ -54,3 +54,25 @@ def test_rapidapi_proxy_secret(monkeypatch):
     )
     assert response.status_code == 200
     assert response.json()["auth_source"] == "rapidapi"
+
+
+def test_rapidapi_key_without_proxy_secret(monkeypatch):
+    monkeypatch.delenv("RAPIDAPI_PROXY_SECRET", raising=False)
+    response = client.get(
+        "/companies?limit=1",
+        headers={"X-RapidAPI-Key": "rapidapi-user-key"},
+    )
+    assert response.status_code == 200
+    assert response.json()["auth_source"] == "rapidapi"
+
+
+def test_rapidapi_wrong_proxy_secret(monkeypatch):
+    monkeypatch.setenv("RAPIDAPI_PROXY_SECRET", "test-secret")
+    response = client.get(
+        "/companies?limit=1",
+        headers={
+            "X-RapidAPI-Key": "rapidapi-user-key",
+            "X-RapidAPI-Proxy-Secret": "wrong-secret",
+        },
+    )
+    assert response.status_code == 403

@@ -120,10 +120,11 @@ async def get_api_key(request: Request) -> dict:
     direct_key = request.headers.get("X-API-Key") or request.query_params.get("api_key")
     rapidapi_secret = os.getenv("RAPIDAPI_PROXY_SECRET")
 
-    if rapidapi_secret and rapidapi_key:
-        supplied_secret = request.headers.get("X-RapidAPI-Proxy-Secret")
-        if supplied_secret != rapidapi_secret:
-            raise HTTPException(status_code=403, detail="Invalid RapidAPI proxy secret")
+    if rapidapi_key:
+        if rapidapi_secret:
+            supplied_secret = request.headers.get("X-RapidAPI-Proxy-Secret")
+            if supplied_secret != rapidapi_secret:
+                raise HTTPException(status_code=403, detail="Invalid RapidAPI proxy secret")
         tier = request.headers.get("X-RapidAPI-Subscription", os.getenv("DEFAULT_TIER", "free")).lower()
         check_rate_limit(f"rapidapi:{rapidapi_key}", tier)
         return {"source": "rapidapi", "tier": tier}
