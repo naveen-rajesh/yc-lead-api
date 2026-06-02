@@ -1,118 +1,135 @@
 import asyncio
 import json
-from datetime import datetime
-from playwright.async_api import async_playwright
+import os
+import re
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urlencode
 
-OUTPUT_FILE = "data/companies.json"
-BASE_URL = "https://www.ycombinator.com/companies"
+import httpx
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+OUTPUT_FILE = BASE_DIR / "data" / "companies.json"
+YC_COMPANIES_URL = "https://www.ycombinator.com/companies"
+ALGOLIA_APP_ID = os.getenv("YC_ALGOLIA_APP_ID", "45BWZJ1SGC")
+ALGOLIA_INDEX = os.getenv("YC_ALGOLIA_INDEX", "YCCompany_production")
+ALGOLIA_API_KEY = os.getenv(
+    "YC_ALGOLIA_API_KEY",
+    "NzllNTY5MzJiZGM2OTY2ZTQwMDEzOTNhYWZiZGRjODlhYzVkNjBmOGRjNzJiMWM4ZTU0ZDlhYTZjOTJiMjlhMWFuYWx5dGljc1RhZ3M9eWNkYyZyZXN0cmljdEluZGljZXM9WUNDb21wYW55X3Byb2R1Y3Rpb24lMkNZQ0NvbXBhbnlfQnlfTGF1bmNoX0RhdGVfcHJvZHVjdGlvbiZ0YWdGaWx0ZXJzPSU1QiUyMnljZGNfcHVibGljJTIyJTVE",
+)
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+async def get_algolia_api_key(client: httpx.AsyncClient) -> str:
+    response = await client.get(YC_COMPANIES_URL)
+    response.raise_for_status()
+
+    match = re.search(r'window\.AlgoliaOpts = \{"app":"[^"]+","key":"([^"]+)"\}', response.text)
+    if match:
+        return match.group(1)
+
+    return ALGOLIA_API_KEY
+
+
+def normalize_company(hit: dict, position: int) -> dict:
+    slug = hit.get("slug") or str(hit.get("objectID", ""))
+    tags = hit.get("tags") or []
+    industries = hit.get("industries") or []
+
+    return {
+        "id": int(hit.get("id") or hit.get("objectID") or position),
+        "name": hit.get("name") or "",
+        "tagline": hit.get("one_liner") or "",
+        "description": hit.get("long_description") or "",
+        "batch": hit.get("batch") or "",
+        "status": hit.get("status") or "",
+        "website": hit.get("website") or "",
+        "location": hit.get("all_locations") or "",
+        "team_size": hit.get("team_size"),
+        "industry": hit.get("industry") or "",
+        "subindustry": hit.get("subindustry") or "",
+        "linkedin": "",
+        "twitter": "",
+        "founders": [],
+        "tags": tags,
+        "tech_stack": sorted(set(tags + industries)),
+        "yc_url": f"https://www.ycombinator.com/companies/{slug}" if slug else "",
+        "email": "",
+        "scraped_at": utc_now(),
+    }
+
+
+async def fetch_page(
+    client: httpx.AsyncClient,
+    api_key: str,
+    page: int,
+    hits_per_page: int,
+) -> dict:
+    params = urlencode(
+        {
+            "hitsPerPage": hits_per_page,
+            "page": page,
+            "facetFilters": '["yc_public"]',
+        }
+    )
+    response = await client.post(
+        f"https://{ALGOLIA_APP_ID}-dsn.algolia.net/1/indexes/{ALGOLIA_INDEX}/query",
+        headers={
+            "x-algolia-application-id": ALGOLIA_APP_ID,
+            "x-algolia-api-key": api_key,
+        },
+        json={"params": params},
+    )
+    response.raise_for_status()
+    return response.json()
+
 
 async def scrape(limit=50):
     results = []
+    page = 0
+    hits_per_page = min(max(limit, 1), 100)
 
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
+    async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
+        api_key = await get_algolia_api_key(client)
 
-        print("Loading YC companies page...")
-        await page.goto(BASE_URL)
-        await page.wait_for_timeout(5000)
+        while len(results) < limit:
+            payload = await fetch_page(client, api_key, page, hits_per_page)
+            hits = payload.get("hits") or []
+            if not hits:
+                break
 
-        links = await page.eval_on_selector_all(
-            "a[href*='/companies/']",
-            "elements => elements.map(e => e.href)"
-        )
+            for hit in hits:
+                results.append(normalize_company(hit, len(results) + 1))
+                if len(results) >= limit:
+                    break
 
-        links = list(dict.fromkeys(links))[:limit]
+            page += 1
+            if page >= int(payload.get("nbPages") or 0):
+                break
 
-        for i, url in enumerate(links, 1):
-            try:
-                print(f"[{i}/{limit}] Scraping {url}")
-                await page.goto(url)
-                await page.wait_for_timeout(3000)
+    return results
 
-                # 🔥 FIX 1: CLEAN NAME FROM URL
-                slug = url.split("/")[-1]
-                name = slug.replace("-", " ").title()
 
-                # ❌ Skip junk entries
-                if "jobs" in name.lower():
-                    continue
+async def scrape_and_save(limit=50):
+    results = await scrape(limit)
+    if not results:
+        raise RuntimeError("YC returned no companies; refusing to overwrite data with an empty file")
 
-                # 🔥 FIX 2: TAGLINE CLEAN
-                tagline = await page.evaluate("""() => {
-                    const el = document.querySelector('h2');
-                    return el ? el.innerText.trim() : "";
-                }""")
-
-                # 🔥 FIX 3: DESCRIPTION
-                description = await page.evaluate("""() => {
-                    const el = document.querySelector('p');
-                    return el ? el.innerText.trim() : "";
-                }""")
-
-                # 🔥 FIX 4: FOUNDERS (CLEAN)
-                founders = await page.evaluate("""() => {
-                    const names = [];
-                    document.querySelectorAll('a[href*="/people/"]').forEach(a => {
-                        const text = a.innerText.trim();
-                        if (
-                            text &&
-                            text.length < 40 &&
-                            text.split(" ").length <= 3 &&
-                            !text.toLowerCase().includes("yc")
-                        ) {
-                            names.push(text);
-                        }
-                    });
-                    return [...new Set(names)].slice(0, 3);
-                }""")
-
-                # 🔥 FIX 5: WEBSITE
-                website = await page.evaluate("""() => {
-                    const a = document.querySelector('a[href^="http"]');
-                    return a ? a.href : "";
-                }""")
-
-                # 🔥 FIX 6: TECH STACK (basic detection)
-                tech_stack = []
-                if description:
-                    if "react" in description.lower(): tech_stack.append("React")
-                    if "aws" in description.lower(): tech_stack.append("AWS")
-                    if "cloud" in description.lower(): tech_stack.append("Cloud")
-
-                company = {
-                    "id": i,
-                    "name": name,
-                    "tagline": tagline,
-                    "description": description,
-                    "batch": "",
-                    "website": website,
-                    "linkedin": "",
-                    "twitter": "",
-                    "founders": founders,
-                    "tags": [],
-                    "tech_stack": tech_stack,
-                    "yc_url": url,
-                    "email": "",
-                    "scraped_at": datetime.utcnow().isoformat(),
-                }
-
-                results.append(company)
-
-            except Exception as e:
-                print("Error:", e)
-                continue
-
-        await browser.close()
-
-    # Save
-    with open(OUTPUT_FILE, "w") as f:
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    temp_file = OUTPUT_FILE.with_suffix(".json.tmp")
+    with temp_file.open("w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
+    temp_file.replace(OUTPUT_FILE)
 
     print(f"Saved {len(results)} companies")
+    return results
 
 
 if __name__ == "__main__":
     import sys
+
     limit = int(sys.argv[1]) if len(sys.argv) > 1 else 50
-    asyncio.run(scrape(limit))
+    asyncio.run(scrape_and_save(limit))

@@ -1,212 +1,296 @@
 import json
-import hashlib
-import secrets
+import os
 import time
-import subprocess
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
-from fastapi import FastAPI, Depends, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-# ── Data ─────────────────────────────────────
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_FILE = BASE_DIR / "data" / "companies.json"
+KEYS_FILE = BASE_DIR / "data" / "api_keys.json"
 
-DATA_FILE = Path(__file__).parent.parent / "data" / "companies.json"
-KEYS_FILE = Path(__file__).parent.parent / "data" / "api_keys.json"
+DEFAULT_PAGE_SIZE = 20
+MAX_PAGE_SIZE = 100
+RATE_WINDOWS: dict[str, list[float]] = defaultdict(list)
 
-@lru_cache()
-def load_companies() -> list[dict]:
-    if DATA_FILE.exists():
-        with open(DATA_FILE) as f:
+TIER_LIMITS = {
+    "free": {"rpm": 30, "credits": 100},
+    "starter": {"rpm": 120, "credits": 1000},
+    "growth": {"rpm": 600, "credits": 10000},
+}
+
+DEFAULT_DEMO_KEY = "demo_key_12345"
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def read_json(path: Path, default: Any) -> Any:
+    if not path.exists():
+        return default
+    try:
+        with path.open(encoding="utf-8") as f:
             return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return default
+
+
+def normalize_text(value: Any) -> str:
+    return str(value or "").strip().lower()
+
+
+def string_list(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value if item]
     return []
 
 
-def load_keys() -> dict:
-    if KEYS_FILE.exists():
-        with open(KEYS_FILE) as f:
-            return json.load(f)
-    default = {
-        "demo_key_12345": {
-            "name": "Demo User",
-            "email": "demo@example.com",
-            "tier": "free",
-            "credits_used": 0,
-            "created_at": datetime.utcnow().isoformat(),
-        }
-    }
-    save_keys(default)
-    return default
+@lru_cache(maxsize=1)
+def load_companies() -> tuple[dict, ...]:
+    data = read_json(DATA_FILE, [])
+    if not isinstance(data, list):
+        return ()
+    return tuple(company for company in data if isinstance(company, dict))
 
 
-def save_keys(keys: dict):
-    KEYS_FILE.parent.mkdir(exist_ok=True)
-    with open(KEYS_FILE, "w") as f:
-        json.dump(keys, f, indent=2)
-
-# ── Rate limiting ─────────────────────────────
-
-RATE_WINDOWS = defaultdict(list)
-TIER_LIMITS = {
-    "free": {"rpm": 10, "credits": 100},
-    "starter": {"rpm": 60, "credits": 1000},
-    "growth": {"rpm": 300, "credits": 10000},
-}
+@lru_cache(maxsize=1)
+def company_index() -> dict[int, dict]:
+    index = {}
+    for company in load_companies():
+        try:
+            index[int(company.get("id"))] = company
+        except (TypeError, ValueError):
+            continue
+    return index
 
 
-def check_rate_limit(key, tier):
-    rpm = TIER_LIMITS[tier]["rpm"]
+@lru_cache(maxsize=1)
+def searchable_companies() -> tuple[tuple[dict, str], ...]:
+    fields = ("name", "tagline", "description", "industry", "subindustry", "location", "batch", "status")
+    searchable = []
+    for company in load_companies():
+        values = [normalize_text(company.get(field)) for field in fields]
+        values.extend(normalize_text(tag) for tag in string_list(company.get("tags")))
+        values.extend(normalize_text(tag) for tag in string_list(company.get("tech_stack")))
+        searchable.append((company, " ".join(values)))
+    return tuple(searchable)
+
+
+def data_updated_at() -> Optional[str]:
+    scraped_times = [normalize_text(company.get("scraped_at")) for company in load_companies() if company.get("scraped_at")]
+    if scraped_times:
+        return max(scraped_times)
+    if not DATA_FILE.exists():
+        return None
+    return datetime.fromtimestamp(DATA_FILE.stat().st_mtime, timezone.utc).isoformat()
+
+
+def configured_direct_keys() -> dict[str, dict]:
+    keys = {}
+    for key in os.getenv("DIRECT_API_KEYS", DEFAULT_DEMO_KEY).split(","):
+        clean = key.strip()
+        if clean:
+            keys[clean] = {"source": "direct", "tier": os.getenv("DEFAULT_TIER", "free")}
+
+    stored = read_json(KEYS_FILE, {})
+    if isinstance(stored, dict):
+        for key, meta in stored.items():
+            if isinstance(meta, dict):
+                keys[key] = {**meta, "source": meta.get("source", "direct")}
+    return keys
+
+
+def check_rate_limit(key: str, tier: str) -> None:
+    limits = TIER_LIMITS.get(tier, TIER_LIMITS["free"])
     now = time.time()
-    RATE_WINDOWS[key] = [t for t in RATE_WINDOWS[key] if now - t < 60]
-    if len(RATE_WINDOWS[key]) >= rpm:
-        return False
+    RATE_WINDOWS[key] = [entry for entry in RATE_WINDOWS[key] if now - entry < 60]
+    if len(RATE_WINDOWS[key]) >= limits["rpm"]:
+        raise HTTPException(status_code=429, detail="Rate limit exceeded")
     RATE_WINDOWS[key].append(now)
-    return True
 
-# ── App ─────────────────────────────────────
 
-app = FastAPI(title="YC Startup Leads API", version="3.1")
+async def get_api_key(request: Request) -> dict:
+    rapidapi_key = request.headers.get("X-RapidAPI-Key")
+    direct_key = request.headers.get("X-API-Key") or request.query_params.get("api_key")
+    rapidapi_secret = os.getenv("RAPIDAPI_PROXY_SECRET")
+
+    if rapidapi_secret and rapidapi_key:
+        supplied_secret = request.headers.get("X-RapidAPI-Proxy-Secret")
+        if supplied_secret != rapidapi_secret:
+            raise HTTPException(status_code=403, detail="Invalid RapidAPI proxy secret")
+        tier = request.headers.get("X-RapidAPI-Subscription", os.getenv("DEFAULT_TIER", "free")).lower()
+        check_rate_limit(f"rapidapi:{rapidapi_key}", tier)
+        return {"source": "rapidapi", "tier": tier}
+
+    if not direct_key:
+        raise HTTPException(status_code=401, detail="Missing API key")
+
+    keys = configured_direct_keys()
+    if direct_key not in keys:
+        raise HTTPException(status_code=403, detail="Invalid API key")
+
+    meta = keys[direct_key]
+    tier = str(meta.get("tier", "free")).lower()
+    check_rate_limit(f"direct:{direct_key}", tier)
+    return {**meta, "tier": tier}
+
+
+def paginate(items: list[dict], page: int, limit: int) -> dict:
+    start = (page - 1) * limit
+    return {
+        "total": len(items),
+        "page": page,
+        "limit": limit,
+        "results": items[start : start + limit],
+    }
+
+
+def score_lead(company: dict) -> int:
+    score = 0
+    if company.get("website"):
+        score += 25
+    if company.get("team_size"):
+        score += min(int(company.get("team_size") or 0), 500) // 20
+    if company.get("industry"):
+        score += 10
+    if company.get("location"):
+        score += 10
+    if company.get("tech_stack"):
+        score += min(len(company.get("tech_stack", [])), 8) * 4
+    if normalize_text(company.get("status")) in {"active", "public", "acquired"}:
+        score += 20
+    return score
+
+
+def matches_filter(company: dict, field: str, expected: Optional[str]) -> bool:
+    if not expected:
+        return True
+    return normalize_text(expected) in normalize_text(company.get(field))
+
+
+app = FastAPI(
+    title="YC Startup Leads API",
+    version="4.0.0",
+    description="Fast searchable YC company data for prospecting, enrichment, and market research.",
+)
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_methods=["*"],
+    allow_methods=["GET"],
     allow_headers=["*"],
 )
 
-# ── Auth (FIXED FOR RAPIDAPI) ─────────────────
-
-async def get_api_key(request: Request):
-    key = (
-        request.headers.get("X-API-Key")
-        or request.headers.get("X-RapidAPI-Key")
-        or request.query_params.get("api_key")
-    )
-
-    if not key:
-        raise HTTPException(401, "Missing API key")
-
-    keys = load_keys()
-    if key not in keys:
-        raise HTTPException(403, "Invalid API key")
-
-    meta = keys[key]
-    tier = meta.get("tier", "free")
-
-    if not check_rate_limit(key, tier):
-        raise HTTPException(429, "Rate limit exceeded")
-
-    if meta["credits_used"] >= TIER_LIMITS[tier]["credits"]:
-        raise HTTPException(402, "Credits exhausted")
-
-    meta["credits_used"] += 1
-    keys[key] = meta
-    save_keys(keys)
-
-    return meta
-
-# ── Routes ──────────────────────────────────
 
 @app.get("/")
 async def root():
     return {
         "message": "YC Startup Leads API",
-        "endpoints": ["/companies", "/leads/high-value"]
+        "version": app.version,
+        "docs": "/docs",
+        "endpoints": ["/companies", "/company/{id}", "/leads/high-value", "/metadata", "/health"],
     }
 
 
-# ✅ MAIN ENDPOINT
 @app.get("/companies")
 async def companies(
-    q: Optional[str] = None,
-    tech: Optional[str] = None,
-    page: int = 1,
-    limit: int = 20,
+    q: Optional[str] = Query(None, description="Search name, tagline, description, tags, industry, and location."),
+    tech: Optional[str] = Query(None, description="Filter by tag or inferred tech/category."),
+    industry: Optional[str] = Query(None, description="Filter by YC industry."),
+    batch: Optional[str] = Query(None, description="Filter by YC batch, for example Winter 2024."),
+    status: Optional[str] = Query(None, description="Filter by status such as Active, Public, or Acquired."),
+    location: Optional[str] = Query(None, description="Filter by location."),
+    min_team_size: Optional[int] = Query(None, ge=0),
+    page: int = Query(1, ge=1),
+    limit: int = Query(DEFAULT_PAGE_SIZE, ge=1, le=MAX_PAGE_SIZE),
     auth: dict = Depends(get_api_key),
 ):
-    data = load_companies()
+    query = normalize_text(q)
+    tech_query = normalize_text(tech)
+    results = []
 
-    # 🔍 Search filter
-    if q:
-        data = [c for c in data if q.lower() in c.get("name", "").lower()]
+    for company, search_blob in searchable_companies():
+        if query and query not in search_blob:
+            continue
+        tech_values = string_list(company.get("tech_stack")) + string_list(company.get("tags"))
+        if tech_query and tech_query not in " ".join(tech_values).lower():
+            continue
+        if not matches_filter(company, "industry", industry):
+            continue
+        if not matches_filter(company, "batch", batch):
+            continue
+        if not matches_filter(company, "status", status):
+            continue
+        if not matches_filter(company, "location", location):
+            continue
+        if min_team_size is not None and int(company.get("team_size") or 0) < min_team_size:
+            continue
+        results.append(company)
 
-    # ⚙️ Tech filter
-    if tech:
-        data = [c for c in data
-            if tech.lower() in " ".join(c.get("tech_stack", [])).lower()
-        ]
+    return {**paginate(results, page, limit), "auth_source": auth["source"]}
 
-    # 📄 Pagination
-    start = (page - 1) * limit
 
+@app.get("/company/{company_id}")
+async def get_company(company_id: int, auth: dict = Depends(get_api_key)):
+    company = company_index().get(company_id)
+    if not company:
+        raise HTTPException(status_code=404, detail="Company not found")
+    return {**company, "auth_source": auth["source"]}
+
+
+@app.get("/leads/high-value")
+async def high_value(
+    industry: Optional[str] = None,
+    location: Optional[str] = None,
+    min_team_size: int = Query(1, ge=0),
+    limit: int = Query(DEFAULT_PAGE_SIZE, ge=1, le=MAX_PAGE_SIZE),
+    auth: dict = Depends(get_api_key),
+):
+    leads = []
+    for company in load_companies():
+        if not company.get("name") or not company.get("website"):
+            continue
+        if int(company.get("team_size") or 0) < min_team_size:
+            continue
+        if not matches_filter(company, "industry", industry):
+            continue
+        if not matches_filter(company, "location", location):
+            continue
+        leads.append({**company, "lead_score": score_lead(company)})
+
+    leads.sort(key=lambda item: item["lead_score"], reverse=True)
+    return {"total": len(leads), "limit": limit, "results": leads[:limit], "auth_source": auth["source"]}
+
+
+@app.get("/metadata")
+async def metadata(auth: dict = Depends(get_api_key)):
+    companies_data = load_companies()
     return {
-        "total": len(data),
-        "results": data[start:start + limit]
+        "companies": len(companies_data),
+        "industries": sorted({c.get("industry") for c in companies_data if c.get("industry")}),
+        "batches": sorted({c.get("batch") for c in companies_data if c.get("batch")}),
+        "statuses": sorted({c.get("status") for c in companies_data if c.get("status")}),
+        "updated_at": data_updated_at(),
+        "auth_source": auth["source"],
     }
 
 
-# 💰 MONEY ENDPOINT (CLEAN LEADS)
-@app.get("/leads/high-value")
-async def high_value(auth: dict = Depends(get_api_key)):
-    data = load_companies()
-
-    leads = []
-
-    for c in data:
-        name = c.get("name", "")
-
-        # ❌ Skip bad entries
-        if not name or "jobs" in name.lower():
-            continue
-
-        if len(name) > 50:
-            continue
-
-        # ✅ Keep only useful leads
-        if (
-            c.get("website")
-            and c.get("tech_stack")
-        ):
-            leads.append(c)
-
-    return leads[:20]
-
-
-# 🩺 HEALTH CHECK
 @app.get("/health")
 async def health():
     return {
         "status": "ok",
         "companies": len(load_companies()),
-        "timestamp": datetime.utcnow().isoformat()
+        "data_updated_at": data_updated_at(),
+        "timestamp": utc_now(),
     }
 
 
-# 🔑 CREATE API KEY
-@app.post("/keys/create")
-async def create_key(name: str, email: str):
-    raw = f"{email}-{secrets.token_hex(16)}"
-    key = hashlib.sha256(raw.encode()).hexdigest()[:32]
-
-    keys = load_keys()
-    keys[key] = {
-        "name": name,
-        "email": email,
-        "tier": "free",
-        "credits_used": 0,
-        "created_at": datetime.utcnow().isoformat(),
-    }
-    save_keys(keys)
-
-    return {"api_key": key}
-
-
-# 🔁 TRIGGER SCRAPER
-@app.post("/admin/scrape")
-async def trigger_scrape():
-    subprocess.Popen(["python3", "scraper/yc_scraper.py", "50"])
-    load_companies.cache_clear()
-    return {"status": "scraping started"}
+@app.get("/healthz")
+async def healthz():
+    return {"status": "ok"}

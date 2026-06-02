@@ -1,415 +1,1456 @@
 [
   {
-    "id": 1,
+    "id": 271,
     "name": "Airbnb",
-    "tagline": "Airbnb",
-    "description": "Book accommodations around the world. MARKETPLACE TRAVEL SAN FRANCISCO Founded in August of 2008 and based in San Francisco, California, Airbnb is a trusted community marketplace for people to list, discover, and book unique accommodations around the world \u2014 online or from a mobile phone. Whether an apartment for a night, a castle for a week, or a villa for a month, Airbnb connects people to unique travel experiences, at any price point, in more than 33,000 cities and 192 countries. And with world-class customer service and a growing community of users, Airbnb is the easiest way for people to ",
+    "tagline": "Book accommodations around the world.",
+    "description": "Founded in August of 2008 and based in San Francisco, California, Airbnb is a trusted community marketplace for people to list, discover, and book unique accommodations around the world \u2014 online or from a mobile phone. Whether an apartment for a night, a castle for a week, or a villa for a month, Airbnb connects people to unique travel experiences, at any price point, in more than 33,000 cities and 192 countries. And with world-class customer service and a growing community of users, Airbnb is the easiest way for people to monetize their extra space and showcase it to an audience of millions.  \r\n\r\nNo global movement springs from individuals. It takes an entire team united behind something big. Together, we work hard, we laugh a lot, we brainstorm nonstop, we use hundreds of Post-Its a week, and we give the best high-fives in town. Headquartered in San Francisco, we have satellite offices in Dublin, London, Barcelona, Paris, Milan, Copenhagen, Berlin, Moscow, S\u00e3o Paolo, Sydney, and Singapore.",
     "batch": "Winter 2009",
+    "status": "Public",
     "website": "http://airbnb.com",
-    "linkedin": "https://www.linkedin.com/in/brianchesky/",
-    "twitter": "https://twitter.com/bchesky",
-    "founders": [
-      "Garry Tan"
-    ],
-    "tags": [],
-    "tech_stack": [
-      "AWS",
-      "Nginx",
-      "React"
-    ],
-    "yc_url": "https://www.ycombinator.com/companies/airbnb",
-    "email": "",
-    "scraped_at": "2026-04-26T14:52:15.830577+00:00"
-  },
-  {
-    "id": 2,
-    "name": "Safe",
-    "tagline": "Hacker News",
-    "description": "Launch YC YC Deals YC Blog Contact People Careers",
-    "batch": "Summer 2013",
-    "website": "http://doordash.com",
-    "linkedin": "https://www.linkedin.com/company/doordash/",
-    "twitter": "http://twitter.com/doordash",
+    "location": "San Francisco, CA, USA",
+    "team_size": 6132,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Travel, Leisure and Tourism",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
     "tags": [
       "Marketplace",
-      "E-Commerce",
-      "San Francisco"
+      "Travel"
     ],
     "tech_stack": [
-      "Cloudflare"
+      "Consumer",
+      "Marketplace",
+      "Travel",
+      "Travel, Leisure and Tourism"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/airbnb",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222095+00:00"
+  },
+  {
+    "id": 531,
+    "name": "DoorDash",
+    "tagline": "Restaurant delivery.",
+    "description": "Founded in 2013, DoorDash is a San Francisco-based technology company passionate about transforming local businesses and dedicated to enabling new ways of working, earning, and living. Today, DoorDash connects customers with their favorite local and national restaurants in more than 600 cities across the United States and Canada. By building intelligent, last-mile delivery technology for local cities, DoorDash aims to connect people with the things they care about \u2014 one dash at a time. \r\n\r\nRead more at blog.doordash.com, and find us on Glassdoor.",
+    "batch": "Summer 2013",
+    "status": "Public",
+    "website": "http://doordash.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 8600,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Food and Beverage",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Marketplace",
+      "E-commerce"
+    ],
+    "tech_stack": [
+      "Consumer",
+      "E-commerce",
+      "Food and Beverage",
+      "Marketplace"
     ],
     "yc_url": "https://www.ycombinator.com/companies/doordash",
     "email": "",
-    "scraped_at": "2026-04-26T14:52:22.060628+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222108+00:00"
   },
   {
-    "id": 3,
+    "id": 439,
     "name": "Coinbase",
-    "tagline": "Coinbase",
-    "description": "Buy, sell, and manage cryptocurrencies. CRYPTO / WEB3 SAN FRANCISCO Founded in June of 2012, Coinbase is a digital currency wallet and platform where merchants and consumers can transact with new digital currencies like bitcoin, ethereum, and litecoin. Our vision is to bring more innovation, efficiency, and equality of opportunity to the world by building an open financial system. Our first step on that journey is making digital currency accessible and approachable for everyone. Two principles guide our efforts. First, be the most trusted company in our domain. Second, create user-focused prod",
+    "tagline": "Buy, sell, and manage cryptocurrencies.",
+    "description": "Founded in June of 2012, Coinbase is a digital currency wallet and platform where merchants and consumers can transact with new digital currencies like bitcoin, ethereum, and litecoin. Our vision is to bring more innovation, efficiency, and equality of opportunity to the world by building an open financial system. Our first step on that journey is making digital currency accessible and approachable for everyone. Two principles guide our efforts. First, be the most trusted company in our domain. Second, create user-focused products that are easier and more intuitive to use.",
     "batch": "Summer 2012",
+    "status": "Public",
     "website": "https://www.coinbase.com",
-    "linkedin": "https://www.linkedin.com/in/barmstrong/",
-    "twitter": "https://twitter.com/coinbase",
-    "founders": [
-      "Garry Tan"
+    "location": "Los Angeles, CA, USA; Remote",
+    "team_size": 6112,
+    "industry": "Fintech",
+    "subindustry": "Fintech -> Banking and Exchange",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Crypto / Web3"
     ],
-    "tags": [],
     "tech_stack": [
-      "AWS",
-      "React"
+      "Banking and Exchange",
+      "Crypto / Web3",
+      "Fintech"
     ],
     "yc_url": "https://www.ycombinator.com/companies/coinbase",
     "email": "",
-    "scraped_at": "2026-04-26T14:52:29.614039+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222113+00:00"
   },
   {
-    "id": 4,
+    "id": 1839,
     "name": "Groww",
-    "tagline": "Groww",
-    "description": "Making financial services simple, transparent and delightful. INDIA INVESTING Groww aims to empower people in India by making financial services simple, transparent and delightful. By leveraging technology, we build reliable and accessible financial services. Groww is India's largest stock broker (in terms of active NSE clients) and the largest distributor of mutual fund SIPs. Founders Eye $1.9 Billion Wealth Boost in India\u2019s Groww IPO - Bloomberg",
+    "tagline": "Making financial services simple, transparent and delightful. ",
+    "description": "Groww aims to empower people in India by making financial services simple, transparent and delightful. By leveraging technology, we build reliable and accessible financial services. \r\n\r\nGroww is India's largest stock broker (in terms of active NSE clients) and the largest distributor of mutual fund SIPs. \r\n",
     "batch": "Winter 2018",
+    "status": "Public",
     "website": "https://groww.in",
-    "linkedin": "https://www.linkedin.com/company/groww.in/",
-    "twitter": "https://twitter.com/_groww",
+    "location": "Bengaluru, KA, India",
+    "team_size": 1050,
+    "industry": "Fintech",
+    "subindustry": "Fintech -> Asset Management",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
+    "tags": [
+      "India",
+      "Investing"
+    ],
     "tech_stack": [
-      "AWS",
-      "Cloudflare",
-      "Firebase",
-      "Next.js",
-      "React"
+      "Asset Management",
+      "Fintech",
+      "India",
+      "Investing"
     ],
     "yc_url": "https://www.ycombinator.com/companies/groww",
     "email": "",
-    "scraped_at": "2026-04-26T14:52:36.241917+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222116+00:00"
   },
   {
-    "id": 5,
+    "id": 731,
     "name": "Oklo",
-    "tagline": "Oklo",
-    "description": "Emission free, always on power from advanced fission power plants. SMALL MODULAR REACTORS CLIMATE SANTA CLARA About Oklo Inc.: Oklo Inc. (Oklo) is developing advanced fission power plants to provide emission-free, reliable, and affordable energy.",
+    "tagline": "Emission free, always on power from advanced fission power plants.",
+    "description": "About Oklo Inc.: \r\n\r\nOklo Inc. (Oklo) is developing advanced fission power plants to provide emission-free, reliable, and affordable energy. \r\n\r\nOklo received a Site Use Permit from the U.S Department of Energy, has performed successful prototypic fuel fabrication, was awarded fuel material from Idaho National Laboratory, developed the first advanced fission combined license application accepted and docketed by the U.S. Nuclear Regulatory Commission, and is developing advanced fuel recycling technologies in collaboration with the U.S. Department of Energy and national laboratories.\r\n\r\nOklo has been featured in Time, Newsweek, Wall Street Journal, CNBC, Popular Mechanics, Wired, Architectural Digest, Hyperallergic, POWER Magazine, has been the subject of a Harvard Business School case, and is featured in the Oliver Stone documentary Nuclear, among other features.",
     "batch": "Summer 2014",
+    "status": "Public",
     "website": "http://oklo.com",
-    "linkedin": "http://linkedin.com/in/jacob-dewitte-90062132",
-    "twitter": "https://www.twitter.com/caorilne",
+    "location": "Santa Clara, CA, USA; Sunnyvale, CA, USA",
+    "team_size": 50,
+    "industry": "Industrials",
+    "subindustry": "Industrials -> Energy",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
+    "tags": [
+      "Small Modular Reactors",
+      "Climate"
+    ],
     "tech_stack": [
-      "AWS",
-      "React",
-      "TypeScript"
+      "Climate",
+      "Energy",
+      "Industrials",
+      "Small Modular Reactors"
     ],
     "yc_url": "https://www.ycombinator.com/companies/oklo",
     "email": "",
-    "scraped_at": "2026-04-26T14:52:47.946900+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222120+00:00"
   },
   {
-    "id": 6,
+    "id": 468,
     "name": "Instacart",
-    "tagline": "Instacart",
-    "description": "Marketplace for grocery delivery and pickup GROCERY DELIVERY E-COMMERCE SAN FRANCISCO Instacart is the North American leader in online grocery and one of the fastest-growing companies in e-commerce. Instacart\u2019s same-day delivery and pickup services bring fresh groceries and everyday essentials to busy people and families across the U.S. and Canada in as fast as an hour. Since its founding in 2012, Instacart has become an essential service for millions of families, while also serving as an immediate, flexible earnings opportunity for hundreds of thousands of shoppers across North America. The c",
+    "tagline": "Marketplace for grocery delivery and pickup",
+    "description": "Instacart is the North American leader in online grocery and one of the fastest-growing companies in e-commerce. Instacart\u2019s same-day delivery and pickup services bring fresh groceries and everyday essentials to busy people and families across the U.S. and Canada in as fast as an hour. Since its founding in 2012, Instacart has become an essential service for millions of families, while also serving as an immediate, flexible earnings opportunity for hundreds of thousands of shoppers across North America.  The company partners with more than 350 retailers and delivers from more than 25,000 stores across more than 5,500 cities in North America. Today, Instacart is accessible to more than 85% of households in the U.S. and more than 70% of households in Canada.",
     "batch": "Summer 2012",
+    "status": "Public",
     "website": "https://www.instacart.com",
-    "linkedin": "https://www.linkedin.com/in/apoorvamehta/",
-    "twitter": "https://twitter.com/apoorva_mehta",
-    "founders": [
-      "Garry Tan"
+    "location": "San Francisco, CA, USA",
+    "team_size": 3000,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Food and Beverage",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Grocery",
+      "Delivery",
+      "E-commerce"
     ],
-    "tags": [],
     "tech_stack": [
-      "AWS",
-      "Nginx",
-      "React"
+      "Consumer",
+      "Delivery",
+      "E-commerce",
+      "Food and Beverage",
+      "Grocery"
     ],
     "yc_url": "https://www.ycombinator.com/companies/instacart",
     "email": "",
-    "scraped_at": "2026-04-26T14:52:56.408797+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222124+00:00"
   },
   {
-    "id": 7,
+    "id": 1266,
     "name": "Meesho",
-    "tagline": "Meesho",
-    "description": "Democratizing internet commerce for everyone in India E-COMMERCE RETAIL Meesho is India\u2019s only true online marketplace, altering the status quo to make e-commerce inclusive and accessible for the next billion users. With a vision to enable 100 million small businesses, including individual entrepreneurs, to succeed online, Meesho is democratising internet commerce and bringing a range of products and new customers online. The Meesho marketplace provides sellers access to millions of customers, selections from over 30 categories, pan-India logistics, payment services and customer support capabi",
+    "tagline": "Democratizing internet commerce for everyone in India",
+    "description": "Meesho is India\u2019s only true online marketplace, altering the status quo to make e-commerce inclusive and accessible for the next billion users. With a vision to enable 100 million small businesses, including individual entrepreneurs, to succeed online, Meesho is democratising internet commerce and bringing a range of products and new customers online. The Meesho marketplace provides sellers access to millions of customers, selections from over 30 categories, pan-India logistics, payment services and customer support capabilities to efficiently run their businesses. \r\n\r\n",
     "batch": "Summer 2016",
+    "status": "Public",
     "website": "http://www.meesho.com",
-    "linkedin": "https://www.linkedin.com/company/meesho/",
-    "twitter": "https://twitter.com/Meesho_Official",
-    "founders": [],
-    "tags": [],
-    "tech_stack": [],
-    "yc_url": "https://www.ycombinator.com/companies/meesho",
-    "email": "",
-    "scraped_at": "2026-04-26T14:53:02.324985+00:00"
-  },
-  {
-    "id": 8,
-    "name": "Safe",
-    "tagline": "Hacker News",
-    "description": "Launch YC YC Deals YC Blog Contact People Careers",
-    "batch": "Summer 2014",
-    "website": "http://rigetti.com",
-    "linkedin": "https://www.linkedin.com/in/chad-rigetti-9891562",
-    "twitter": "https://twitter.com/ChadRigetti",
+    "location": "Bengaluru, KA, India",
+    "team_size": 1450,
+    "industry": "B2B",
+    "subindustry": "B2B -> Retail",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
     "tags": [
-      "Quantum Computing",
-      "Berkeley"
+      "E-commerce",
+      "Retail"
     ],
     "tech_stack": [
-      "AWS",
-      "Cloudflare",
-      "Nginx",
-      "Segment"
+      "B2B",
+      "E-commerce",
+      "Retail"
     ],
-    "yc_url": "https://www.ycombinator.com/companies/rigetti-computing",
+    "yc_url": "https://www.ycombinator.com/companies/meesho",
     "email": "",
-    "scraped_at": "2026-04-26T14:53:11.144654+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222127+00:00"
   },
   {
-    "id": 9,
+    "id": 325,
     "name": "Dropbox",
-    "tagline": "Dropbox",
-    "description": "Backup and share files in the cloud. SAN FRANCISCO Dropbox is building the world\u2019s first smart workspace. Back in 2007, making work better for people meant designing a simpler way to keep files in sync. Today, it means designing products that reduce busywork so you can focus on the work that matters. Most \u201cproductivity tools\u201d get in your way. They constantly ping, distract, and disrupt your team\u2019s flow, so you spend your days switching between apps and tracking down feedback. It\u2019s busywork, not the meaningful stuff. We want to change this. We believe there\u2019s a more enlightened way to work. Dro",
+    "tagline": "Backup and share files in the cloud.",
+    "description": "Dropbox is building the world\u2019s first smart workspace.\r\nBack in 2007, making work better for people meant designing a simpler way to keep files in sync. Today, it means designing products that reduce busywork so you can focus on the work that matters.\r\n\r\nMost \u201cproductivity tools\u201d get in your way. They constantly ping, distract, and disrupt your team\u2019s flow, so you spend your days switching between apps and tracking down feedback. It\u2019s busywork, not the meaningful stuff. We want to change this. \r\n\r\nWe believe there\u2019s a more enlightened way to work. Dropbox helps people be organized, stay focused, and get in sync with their teams.",
     "batch": "Summer 2007",
+    "status": "Public",
     "website": "http://dropbox.com",
-    "linkedin": "https://www.linkedin.com/in/drewhouston/",
-    "twitter": "https://twitter.com/drewhouston",
+    "location": "San Francisco, CA, USA",
+    "team_size": 4000,
+    "industry": "B2B",
+    "subindustry": "B2B -> Productivity",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
     "tags": [],
     "tech_stack": [
-      "React",
-      "TypeScript"
+      "B2B",
+      "Productivity"
     ],
     "yc_url": "https://www.ycombinator.com/companies/dropbox",
     "email": "",
-    "scraped_at": "2026-04-26T14:53:19.223804+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222130+00:00"
   },
   {
-    "id": 10,
-    "name": "Safe",
-    "tagline": "Hacker News",
-    "description": "Launch YC YC Deals YC Blog Contact People Careers",
+    "id": 809,
+    "name": "EquipmentShare",
+    "tagline": "Cloud solutions for the construction industry.",
+    "description": "EquipmentShare delivers cloud solutions for the construction industry. We provide a better equipment rental experience, fleet tracking software and hardware security solutions to help contractors work smarter. ",
     "batch": "Winter 2015",
+    "status": "Public",
     "website": "https://www.equipmentshare.com",
-    "linkedin": "https://linkedin.com/in/bradsiegler",
-    "twitter": "https://twitter.com/BradSiegler",
+    "location": "Columbia, MO, USA",
+    "team_size": 5400,
+    "industry": "Real Estate and Construction",
+    "subindustry": "Real Estate and Construction -> Construction",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
     "tags": [
       "Construction"
     ],
     "tech_stack": [
-      "AWS"
+      "Construction",
+      "Real Estate and Construction"
     ],
     "yc_url": "https://www.ycombinator.com/companies/equipmentshare",
     "email": "",
-    "scraped_at": "2026-04-26T14:53:27.534269+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222133+00:00"
   },
   {
-    "id": 11,
-    "name": "Jobs at BillionToOne",
-    "tagline": "View all jobs",
-    "description": "Senior Software Engineer, Digital Experiences (Prenatal) Menlo Park, CA, US $190K - $211K 6+ Years Apply Now \u203a Senior Software Engineer, Oncology",
-    "batch": "Summer 2017",
-    "website": "https://www.billiontoone.com",
-    "linkedin": "https://www.linkedin.com/company/billiontoone/",
-    "twitter": "https://twitter.com/billiontooneinc?lang=en",
-    "founders": [
-      "Jared Friedman"
-    ],
+    "id": 700,
+    "name": "Rigetti Computing",
+    "tagline": "Quantum coherent supercomputing.",
+    "description": "Rigetti Computing is building the world\u2019s most powerful computers to help solve humanity\u2019s most pressing and important problems. These systems will perform computations that today\u2019s fastest supercomputers are incapable of \u2014 unlocking entirely new classes of problems and offering a direct path to solutions. We are scientists, engineers, builders, and visionaries. We believe quantum computing is going to significantly affect health care, how we treat disease, how we generate energy, and how we feed humanity. Rigetti is the only company deploying full-stack solutions for hybrid classical/quantum computing. Our 19-qubit quantum computer is available online through our Forest platform, and the first commercially useful applications are already under exploration.\r\n\r\nWe were founded in 2013 by Chad Rigetti, and are located Berkeley and Fremont, California.",
+    "batch": "Summer 2014",
+    "status": "Public",
+    "website": "http://rigetti.com",
+    "location": "Berkeley, CA, USA",
+    "team_size": 51,
+    "industry": "Industrials",
+    "subindustry": "Industrials -> Manufacturing and Robotics",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
     "tags": [
-      "Diagnostics",
-      "Genomics",
-      "Menlo Park"
+      "Quantum Computing"
     ],
     "tech_stack": [
-      "AWS"
+      "Industrials",
+      "Manufacturing and Robotics",
+      "Quantum Computing"
     ],
-    "yc_url": "https://www.ycombinator.com/companies/billiontoone",
+    "yc_url": "https://www.ycombinator.com/companies/rigetti-computing",
     "email": "",
-    "scraped_at": "2026-04-26T13:58:32.723354+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222137+00:00"
   },
   {
-    "id": 12,
-    "name": "San Francisco",
-    "tagline": "Founders",
-    "description": "Sid Sijbrandij Founder/CEO Dmytro Zaporozhets Founder/CTO Footer Y Combinator",
+    "id": 810,
+    "name": "GitLab",
+    "tagline": "A complete DevOps platform delivered as a single application.",
+    "description": "GitLab is the first single application for the entire DevOps lifecycle. Only GitLab enables Concurrent DevOps, unlocking organizations from the constraints of today\u2019s toolchain. GitLab provides unmatched visibility, radical new levels of efficiency and comprehensive governance to significantly compress the time between planning a change and monitoring its effect. This makes the software lifecycle 200% faster, radically improving the speed of business.\r\n\r\nGitLab and Concurrent DevOps collapses cycle times by driving higher efficiency across all stages of the software development lifecycle. For the first time, Product, Development, QA, Security, and Operations teams can work concurrently in a single application. There\u2019s no need to integrate and synchronize tools, or waste time waiting for handoffs. Everyone contributes to a single conversation, instead of managing multiple threads across disparate tools. And only GitLab gives teams complete visibility across the lifecycle with a single, trusted source of data to simplify troubleshooting and drive accountability. All activity is governed by consistent controls, making security and compliance first-class citizens instead of an afterthought.\r\n\r\nBuilt on Open Source, GitLab leverages the community contributions of thousands of developers and millions of users to continuously deliver new DevOps innovations. More than 100,000 organizations from startups to global enterprise organizations, including Ticketmaster, Jaguar Land Rover, NASDAQ, Dish Network and Comcast trust GitLab to deliver great software at new speeds.",
     "batch": "Winter 2015",
+    "status": "Public",
     "website": "http://gitlab.com/",
-    "linkedin": "https://www.linkedin.com/company/gitlab-com",
-    "twitter": "https://twitter.com/gitlab",
+    "location": "San Francisco, CA, USA; Remote",
+    "team_size": 2000,
+    "industry": "B2B",
+    "subindustry": "B2B -> Engineering, Product and Design",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
     "tags": [
       "Developer Tools",
-      "Devsecops",
-      "Open Source",
-      "San Francisco"
+      "DevSecOps",
+      "Open Source"
     ],
     "tech_stack": [
-      "React",
-      "TypeScript"
+      "B2B",
+      "DevSecOps",
+      "Developer Tools",
+      "Engineering, Product and Design",
+      "Open Source"
     ],
     "yc_url": "https://www.ycombinator.com/companies/gitlab",
     "email": "",
-    "scraped_at": "2026-04-26T13:58:42.044316+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222141+00:00"
   },
   {
-    "id": 13,
-    "name": "Matterport",
-    "tagline": "Matterport",
-    "description": "Turn physical objects and environments into 3D models in seconds. COMPUTER VISION SUNNYVALE Matterport is an immersive media technology company that is shaking up the 3D / VR world. Our team has built the first end-to-end system for creating, modifying, distributing, and navigating immersive 3D and virtual reality (VR) versions of real-world spaces on web and mobile devices. Matterport offers the world's most inexpensive and simplest way to capture 3D spaces. Our products include: - Matterport Pro Camera for capturing real spaces in 3D. It collects accurate visual and spatial data to map entir",
-    "batch": "Winter 2012",
-    "website": "http://matterport.com",
-    "linkedin": "https://www.linkedin.com/in/david-gausebeck-ab23015",
-    "twitter": "https://twitter.com/ycombinator",
+    "id": 1109,
+    "name": "BillionToOne",
+    "tagline": "The genetic testing platform detecting and measuring disease.",
+    "description": "BillionToOne has developed a DNA molecular counter that increases the cell-free DNA diagnostics resolution by over 1,000 fold, which unlocks transformative improvements in prenatal screening and liquid biopsy for cancers. Unity Screen, BillionToOne's commercially available non-invasive prenatal test (NIPT), is the only NIPT that can assess fetal risk for both recessive conditions and aneuploidies from maternal blood. UNITY Screen continues to grow exponentially and is on its path to becoming the next standard-of-care, with an increasing number of publications showing its accuracy and advantages over other screening methods. We have also recently used our molecular counting technology to develop liquid biopsy tests, which have the potential to completely transform oncology care.",
+    "batch": "Summer 2017",
+    "status": "Public",
+    "website": "https://www.billiontoone.com",
+    "location": "Menlo Park, CA, USA",
+    "team_size": 300,
+    "industry": "Healthcare",
+    "subindustry": "Healthcare -> Diagnostics",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
+    "tags": [
+      "Diagnostics",
+      "Genomics"
+    ],
     "tech_stack": [
-      "Next.js",
-      "Segment",
-      "Vercel"
+      "Diagnostics",
+      "Genomics",
+      "Healthcare"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/billiontoone",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222144+00:00"
+  },
+  {
+    "id": 30,
+    "name": "Matterport",
+    "tagline": "Turn physical objects and environments into 3D models in seconds.",
+    "description": "Matterport is an immersive media technology company that is shaking up the 3D / VR world.  Our team has built the first end-to-end system for creating, modifying, distributing, and navigating immersive 3D and virtual reality (VR) versions of real-world spaces on web and mobile devices. Matterport offers the world's most inexpensive and simplest way to capture 3D spaces. \r\n\r\nOur products include:\r\n- Matterport Pro Camera for capturing real spaces in 3D.  It collects accurate visual and spatial data to map entire areas in minutes and is all about automation and ease of use.\r\n- The Matterport Cloud for processing and hosting 3D models\r\n- Matterport Portal, our system for viewing, editing, and managing models; collaborating with colleagues; and sharing models with others\r\n- Matterport 3D Showcase, a browser-based 3D media player, which allows anyone to view 3D models in their browser with no additional software\r\n- Matterport Core VR: All Spaces can be converted to VR and experienced on Samsung Gear VR or Google Cardboard (in beta), with additional device support coming soon.\r\n\r\nMatterport 3D media solutions power industries from real estate (residential, multi-family and commercial) and travel and hospitality (hotels, vacation rentals, and venue booking), to business listings, architecture, engineering and construction, news and entertainment, and everything in between. \r\n\r\nWe\u2019re growing fast. If you\u2019re passionate about solving cutting-edge problems in computer vision and hardware design and creating order-of-magnitude improvements in the ability to easily create and share 3D models of real world spaces, we want to talk to you. See open positions at matterport.com/jobs.\r\n\r\nTry Matterport for yourself at matterport.com/try.",
+    "batch": "Winter 2012",
+    "status": "Public",
+    "website": "http://matterport.com",
+    "location": "Sunnyvale, CA, USA",
+    "team_size": 201,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Virtual and Augmented Reality",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Computer Vision"
+    ],
+    "tech_stack": [
+      "Computer Vision",
+      "Consumer",
+      "Virtual and Augmented Reality"
     ],
     "yc_url": "https://www.ycombinator.com/companies/matterport",
     "email": "",
-    "scraped_at": "2026-04-26T13:58:49.629678+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222147+00:00"
   },
   {
-    "id": 14,
+    "id": 40,
     "name": "Amplitude",
-    "tagline": "Amplitude",
-    "description": "Digital Analytics Platform DEVELOPER TOOLS B2B ANALYTICS MARKETING DATA VISUALIZATION",
+    "tagline": "Digital Analytics Platform",
+    "description": "Since graduating from YC, Amplitude (W12) has made it to IPO and beyond by helping cutting edge startups become category leaders. We\u2019ve pioneered the digital analytics category to become the go-to solution for AI pioneers (Cruise, Midjourney), apps that touch millions of consumers (Doordash, Coinbase), and the best in B2B (Atlassian, Rippling, Canva).  \r\n\r\nWith product analytics, experiment, CDP, session replay, and more, Amplitude\u2019s digital analytics platform shows you what your users love, where they\u2019re getting stuck, and what keeps them coming back. You want to build a generational business, and we have the capabilities and pricing plans to guide you every step of the way. Check out our special deal for YC companies and get started on your analytics journey. ",
     "batch": "Winter 2012",
+    "status": "Public",
     "website": "https://amplitude.com",
-    "linkedin": "https://www.linkedin.com/in/spenserskates",
-    "twitter": "https://x.com/spenserskates",
+    "location": "San Francisco, CA, USA",
+    "team_size": 750,
+    "industry": "B2B",
+    "subindustry": "B2B -> Analytics",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
+    "tags": [
+      "Developer Tools",
+      "B2B",
+      "Analytics",
+      "Marketing",
+      "Data Visualization"
+    ],
     "tech_stack": [
-      "Next.js",
-      "Nginx",
-      "React",
-      "Vercel"
+      "Analytics",
+      "B2B",
+      "Data Visualization",
+      "Developer Tools",
+      "Marketing"
     ],
     "yc_url": "https://www.ycombinator.com/companies/amplitude",
     "email": "",
-    "scraped_at": "2026-04-26T13:58:58.064020+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222151+00:00"
   },
   {
-    "id": 15,
-    "name": "Active Founders",
-    "tagline": "Alex Solomon",
-    "description": "Founder/CTO Co-Founder, PagerDuty. Alex started PagerDuty in 2009 as founding CEO, leading the company through several stages of growth, including product-market fit, fundraising, and expansion of the product vision. He replaced himself in 2016 and stepped into the role of CTO (until 2020), and later, GM of Platform (until 2024). He has served on the PagerDuty board of directors since 2010. Toronto-founded PagerDuty goes public, sees stocks jump in market debut | BetaKit Apr 12, 2019 PagerDuty Batch:",
+    "id": 202,
+    "name": "PagerDuty",
+    "tagline": "Real-time visibility into critical apps and services all in one place.",
+    "description": "PagerDuty is an operations performance platform delivering visibility and actionable intelligence across the entire incident lifecycle. Their SaaS-based solution empowers over 10,000 small, mid-size and enterprise global customers such as Comcast, eHarmony, Slack and Lululemon with the insight to intelligently respond to critical disruptions for exceptional customer experience. PagerDuty was founded to deliver a new and innovative approach to increase business response and efficiency. When brand reputation depends on customer satisfaction, PagerDuty arms businesses with the insight to proactively manage incidents and events that may impact customers across their IT environment.",
     "batch": "Summer 2010",
+    "status": "Public",
     "website": "http://pagerduty.com",
-    "linkedin": "https://www.linkedin.com/in/alexsolo",
-    "twitter": "https://twitter.com/ycombinator",
+    "location": "San Francisco, CA, USA",
+    "team_size": 950,
+    "industry": "B2B",
+    "subindustry": "B2B -> Engineering, Product and Design",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
     "tags": [
-      "Devops",
-      "Monitoring",
-      "San Francisco"
+      "DevOps",
+      "Monitoring"
     ],
     "tech_stack": [
-      "AWS",
-      "Next.js",
-      "React"
+      "B2B",
+      "DevOps",
+      "Engineering, Product and Design",
+      "Monitoring"
     ],
     "yc_url": "https://www.ycombinator.com/companies/pagerduty",
     "email": "",
-    "scraped_at": "2026-04-26T13:59:07.513913+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222154+00:00"
   },
   {
-    "id": 16,
+    "id": 729,
     "name": "Ginkgo Bioworks",
-    "tagline": "Ginkgo Bioworks",
-    "description": "Our mission is to make biology easier to engineer. SYNTHETIC BIOLOGY DIAGNOSTICS AUTOMATION BOSTON Ginkgo Bioworks is the organism company. We design custom organisms for customers across multiple markets. We build our foundries to scale the process of organism engineering using software and hardware automation. Organism engineers at Ginkgo learn from nature to develop new organisms that replace technology with biology.",
+    "tagline": "Our mission is to make biology easier to engineer.",
+    "description": "Ginkgo Bioworks is the organism company. We design custom organisms for customers across multiple markets. We build our foundries to scale the process of organism engineering using software and hardware automation. Organism engineers at Ginkgo learn from nature to develop new organisms that replace technology with biology.",
     "batch": "Summer 2014",
+    "status": "Public",
     "website": "http://ginkgobioworks.com",
-    "linkedin": "https://www.linkedin.com/company/ginkgo-bioworks/",
-    "twitter": "https://twitter.com/Ginkgo",
+    "location": "Boston, MA, USA",
+    "team_size": 641,
+    "industry": "Healthcare",
+    "subindustry": "Healthcare -> Industrial Bio",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
+    "tags": [
+      "Synthetic Biology",
+      "Diagnostics",
+      "Automation"
+    ],
     "tech_stack": [
-      "AWS",
-      "Cloudflare",
-      "HubSpot"
+      "Automation",
+      "Diagnostics",
+      "Healthcare",
+      "Industrial Bio",
+      "Synthetic Biology"
     ],
     "yc_url": "https://www.ycombinator.com/companies/ginkgo-bioworks",
     "email": "",
-    "scraped_at": "2026-04-26T13:59:15.160199+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222157+00:00"
   },
   {
-    "id": 17,
+    "id": 630,
     "name": "Weave",
-    "tagline": "Weave",
-    "description": "Customer communication and payments platform. SAAS As the pace of innovation continues, it is growing more difficult to see the value of technology. Often meaningful information is inaccessible at the time it would be most beneficial. Weave threads together data, software and communication platforms to build stronger relationships at the point of contact by making valuable information instantly available in simple and intuitive formats. This delivers improved productivity, better collaboration and greater insights making it easier to meet the needs of patients and to build better business and ",
+    "tagline": "Customer communication and payments platform.",
+    "description": "As the pace of innovation continues, it is growing more difficult to see the value of technology. Often meaningful information is inaccessible at the time it would be most beneficial. Weave threads together data, software and communication platforms to build stronger relationships at the point of contact by making valuable information instantly available in simple and intuitive formats. This delivers improved productivity, better collaboration and greater insights making it easier to meet the needs of patients and to build better business and clinical outcomes.",
     "batch": "Winter 2014",
+    "status": "Public",
     "website": "http://getweave.com",
-    "linkedin": "https://www.linkedin.com/in/brandonrodman",
-    "twitter": "https://twitter.com/ycombinator",
+    "location": "Lehi, UT, USA",
+    "team_size": 600,
+    "industry": "B2B",
+    "subindustry": "B2B -> Office Management",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
+    "tags": [
+      "SaaS"
+    ],
     "tech_stack": [
-      "AWS",
-      "Next.js",
-      "React",
-      "Vercel"
+      "B2B",
+      "Office Management",
+      "SaaS"
     ],
     "yc_url": "https://www.ycombinator.com/companies/weave",
     "email": "",
-    "scraped_at": "2026-04-26T13:59:23.385950+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222161+00:00"
   },
   {
-    "id": 18,
+    "id": 22111,
     "name": "Pardes Biosciences",
-    "tagline": "Pardes Biosciences",
-    "description": "We break viruses BIOTECH THERAPEUTICS SAN FRANCISCO We make oral drugs to treat and prevent viral infections - like COVID-19. Active Founders",
+    "tagline": "We break viruses",
+    "description": "We make oral drugs to treat and prevent viral infections - like COVID-19.  ",
     "batch": "Summer 2020",
+    "status": "Public",
     "website": "http://www.pardesbio.com",
-    "linkedin": "https://linkedin.com/in/urilopatin",
-    "twitter": "https://twitter.com/ycombinator",
+    "location": "San Francisco, CA, USA; Remote",
+    "team_size": 2,
+    "industry": "Healthcare",
+    "subindustry": "Healthcare -> Drug Discovery and Delivery",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
-    "tech_stack": [],
+    "tags": [
+      "Biotech",
+      "Therapeutics"
+    ],
+    "tech_stack": [
+      "Biotech",
+      "Drug Discovery and Delivery",
+      "Healthcare",
+      "Therapeutics"
+    ],
     "yc_url": "https://www.ycombinator.com/companies/pardes-bio",
     "email": "",
-    "scraped_at": "2026-04-26T13:59:30.522144+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222164+00:00"
   },
   {
-    "id": 19,
+    "id": 982,
     "name": "Embark Trucks",
-    "tagline": "Embark Trucks",
-    "description": "Self-driving semi trucks. AUTONOMOUS TRUCKING SAN FRANCISCO Embark Technology develops self-driving truck software. Embark was the first self-driving truck company to achieve an autonomous coast-to-coast drive, the first to reach 100,000 miles driven on public roads, and the first to open a network of transfer points. Embark went public on NASDAQ in 2021 and was acquired by Applied Intuition in 2023.",
+    "tagline": "Self-driving semi trucks.",
+    "description": "Embark Technology develops self-driving truck software. \r\n\r\nEmbark was the first self-driving truck company to achieve an autonomous coast-to-coast drive, the first to reach 100,000 miles driven on public roads, and the first to open a network of transfer points.\r\n\r\nEmbark went public on NASDAQ in 2021 and was acquired by Applied Intuition in 2023.",
     "batch": "Winter 2016",
+    "status": "Public",
     "website": "http://embarktrucks.com",
-    "linkedin": "https://ca.linkedin.com/in/rodriguesalex",
-    "twitter": "https://twitter.com/alexrodriguesca",
+    "location": "San Francisco, CA, USA",
+    "team_size": 300,
+    "industry": "Industrials",
+    "subindustry": "Industrials -> Automotive",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
-    "tech_stack": [],
+    "tags": [
+      "Autonomous Trucking"
+    ],
+    "tech_stack": [
+      "Automotive",
+      "Autonomous Trucking",
+      "Industrials"
+    ],
     "yc_url": "https://www.ycombinator.com/companies/embark-trucks",
     "email": "",
-    "scraped_at": "2026-04-26T13:59:37.929936+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222167+00:00"
   },
   {
-    "id": 20,
+    "id": 1993,
     "name": "Momentus",
-    "tagline": "Momentus",
-    "description": "The space infrastructure services company COMMERCIAL SPACE LAUNCH SOLAR POWER SPACE EXPLORATION SANTA CLARA Momentus is a space infrastructure services company. As a first mover, Momentus will offer the most basic, foundational services that enable businesses to flourish in space. With their experienced team of aerospace, propulsion, and robotics engineers, Momentus makes and operates cost-effective and energy-efficient in-space transport and service vehicles that utilize water plasma propulsion technology. Momentus has service agreements in place with numerous private satellite companies, gov",
+    "tagline": "The space infrastructure services company",
+    "description": "Momentus is a space infrastructure services company. As a first mover, Momentus will offer the most basic, foundational services that enable businesses to flourish in space. With their experienced team of aerospace, propulsion, and robotics engineers, Momentus makes and operates cost-effective and energy-efficient in-space transport and service vehicles that utilize water plasma propulsion technology. Momentus has service agreements in place with numerous private satellite companies, government agencies, and research organizations.",
     "batch": "Summer 2018",
+    "status": "Public",
     "website": "https://momentus.space",
-    "linkedin": "https://linkedin.com/in/kokorich",
-    "twitter": "https://twitter.com/mkokorich",
+    "location": "Santa Clara, CA, USA",
+    "team_size": 125,
+    "industry": "Industrials",
+    "subindustry": "Industrials -> Aviation and Space",
+    "linkedin": "",
+    "twitter": "",
     "founders": [],
-    "tags": [],
+    "tags": [
+      "Commercial Space Launch",
+      "Solar Power",
+      "Space Exploration"
+    ],
     "tech_stack": [
-      "Cloudflare",
-      "Segment"
+      "Aviation and Space",
+      "Commercial Space Launch",
+      "Industrials",
+      "Solar Power",
+      "Space Exploration"
     ],
     "yc_url": "https://www.ycombinator.com/companies/momentus",
     "email": "",
-    "scraped_at": "2026-04-26T13:59:45.740303+00:00"
+    "scraped_at": "2026-05-22T12:27:31.222173+00:00"
+  },
+  {
+    "id": 805,
+    "name": "Lucira Health",
+    "tagline": "Next generation infectious disease test kits",
+    "description": "Diassess Inc. is revolutionizing the way infectious diseases are prevented, diagnosed, and monitored by developing the tools necessary to empower people to become knowledgeable about their health. We produce inexpensive, disposable health diagnostic hardware that transforms any smartphone into a portable, real-time health-monitoring device for rapid, accessible, multiplexed analysis of bodily fluids anywhere in the world.",
+    "batch": "Winter 2015",
+    "status": "Public",
+    "website": "https://www.lucirahealth.com/",
+    "location": "Emeryville, CA, USA",
+    "team_size": 43,
+    "industry": "Healthcare",
+    "subindustry": "Healthcare -> Diagnostics",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Health Tech",
+      "Diagnostics"
+    ],
+    "tech_stack": [
+      "Diagnostics",
+      "Health Tech",
+      "Healthcare"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/lucira-health",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222176+00:00"
+  },
+  {
+    "id": 88,
+    "name": "Segment",
+    "tagline": "Software and APIs to collect, clean, and control customer data.",
+    "description": "Segment is one place to collect customer data and send it to your tools for analytics, marketing automation, and raw data access with SQL. Implement all of your event tracking with Segment\u2019s single API instead of wrangling a new API for every new tool or database. Segment's integrations let you send your data to hundreds of tools and databases.",
+    "batch": "Summer 2011",
+    "status": "Acquired",
+    "website": "http://segment.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 550,
+    "industry": "B2B",
+    "subindustry": "B2B -> Analytics",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "SaaS",
+      "B2B"
+    ],
+    "tech_stack": [
+      "Analytics",
+      "B2B",
+      "SaaS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/segment",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222180+00:00"
+  },
+  {
+    "id": 636,
+    "name": "Algolia",
+    "tagline": "A developer-friendly and enterprise-grade search API.",
+    "description": "Our mission is to make every search interaction meaningful & rewarding, through developer-friendly and enterprise-grade APIs.\r\n\r\nAlgolia is the leading Search & Discovery API for websites and mobile apps. We help the most innovative companies across e-commerce, media and SaaS industries create powerful, relevant and scalable discovery experiences for their users. Unlike other solutions, our hosted platform reduces the complexities of building and scaling a fast, relevant digital experience and helps teams accelerate development time. More than 9,000 companies like Under Armour, Twitch, Periscope, Medium and Stripe rely on Algolia to manage 50+ billion search queries a month.\r\n\r\nFounded in 2012, we're backed by $184M in funding from Accel Partners, Alven Capital, Point Nine Capital and Storm Ventures. The team is headquartered in San Francisco with offices in Paris, London, New York, and Atlanta. To learn more, visit www.algolia.com.\r\n\r\n---\r\nWe\u2019re looking for talented, passionate people to build the world\u2019s best search technology. As an ownership-driven company, we seek team members who thrive under autonomy and diversity. \r\n\r\nWe're committed to building an inclusive and diverse workplace. We care about each other and the world around us, and embrace talented people regardless of their race, age, ancestry, religion, sex, gender identity, sexual orientation, marital status, color, veteran status, disability and socioeconomic background",
+    "batch": "Winter 2014",
+    "status": "Active",
+    "website": "http://www.algolia.com",
+    "location": "San Francisco, CA, USA; Paris, \u00cele-de-France, France",
+    "team_size": 810,
+    "industry": "B2B",
+    "subindustry": "B2B -> Engineering, Product and Design",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Developer Tools",
+      "SaaS",
+      "B2B"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Developer Tools",
+      "Engineering, Product and Design",
+      "SaaS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/algolia",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222183+00:00"
+  },
+  {
+    "id": 1005,
+    "name": "Truebill",
+    "tagline": "Live your best financial life",
+    "description": "Rocket Money (formerly Truebill) is a leading personal finance app that analyzes members' spending habits, identifies inefficiencies, and offers immediate methods to improve their financial health. It enables people to optimize their spending, manage subscriptions, lower their bills, and automatically set aside money to reach their savings goals. Truebill has saved members more than $100 million since 2016 and is headquartered in Silver Spring, Maryland, with offices in San Francisco. \r\n\r\nTruebill's mission is to empower people to live their best financial lives. Truebill offers members a unique understanding of their finances and a suite of valuable services that save them time and money - ultimately giving them a leg up on their financial journey. \r\n\r\nTruebill is backed by Accel, Bessemer Venture Partners, Eldridge Industries, and YCombinator.",
+    "batch": "Winter 2016",
+    "status": "Acquired",
+    "website": "https://www.truebill.com",
+    "location": "Silver Spring, MD, USA",
+    "team_size": 225,
+    "industry": "Fintech",
+    "subindustry": "Fintech -> Consumer Finance",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Fintech"
+    ],
+    "tech_stack": [
+      "Consumer Finance",
+      "Fintech"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/truebill",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222186+00:00"
+  },
+  {
+    "id": 383,
+    "name": "Twitch",
+    "tagline": "A global community creating the future of live entertainment.",
+    "description": "Twitch is the world\u2019s leading video platform and community for gamers. More than 100 million gamers gather every month to broadcast, watch and chat about gaming. Twitch\u2019s video platform is the backbone of live and on-demand distribution for leading video game broadcasters including casual gamers, pro players, tournaments, leagues, developers and gaming media organizations. Twitch is leading a revolution in the gaming community, working to create a participatory experience that transcends gameplay. Learn more at http://twitch.tv.",
+    "batch": "Winter 2007",
+    "status": "Acquired",
+    "website": "http://twitch.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 2000,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Content",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Community",
+      "Gaming",
+      "Social Media",
+      "Video",
+      "Social Network"
+    ],
+    "tech_stack": [
+      "Community",
+      "Consumer",
+      "Content",
+      "Gaming",
+      "Social Media",
+      "Social Network",
+      "Video"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/twitch",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222190+00:00"
+  },
+  {
+    "id": 8,
+    "name": "PlanGrid",
+    "tagline": "Mobile applications for the construction industry.",
+    "description": "PlanGrid is the leader in construction productivity software, used on more than one million projects in 84 countries. PlanGrid's cloud-based platform empowers contractors and owners in commercial, heavy civil, and other industries to collaborate easily from their mobile devices and desktop, managing blueprints, specs, photos, RFIs, field reports, and punch lists. With over 100 million digital blueprints on its platform, PlanGrid is also the largest digital blueprint repository in the world. \r\n\r\nFounded in 2011, the company was part of Y Combinator in 2012, and has secured over $69 million in funding from Sequoia Capital, Tenaya Capital and several other top firms.",
+    "batch": "Winter 2012",
+    "status": "Acquired",
+    "website": "http://plangrid.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 355,
+    "industry": "Real Estate and Construction",
+    "subindustry": "Real Estate and Construction -> Construction",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Construction"
+    ],
+    "tech_stack": [
+      "Construction",
+      "Real Estate and Construction"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/plangrid",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222193+00:00"
+  },
+  {
+    "id": 580,
+    "name": "Bellabeat",
+    "tagline": "Tech-powered women's wellness.",
+    "description": "Founded in 2014, Bellabeat\u00a0is a data-centered wellness femtech company behind some of the most fashionably designed tech-powered wellness products and one of the fastest-growing wellness subscription services for women. Throughout the years, Bellabeat built the go-to wellness brand with a compelling ecosystem of solutions and services focused on women\u2019s health. The success of the Leaf and Ivy wearables enabled the brand to expand to international markets and kickstart industry discussions on the importance of innovating in the design and development of tech products. Today, Bellabeat is leading the market shift with hyper-personalized holistic wellness offerings aligned with a women\u2019s menstrual cycle. ",
+    "batch": "Winter 2014",
+    "status": "Active",
+    "website": "http://bellabeat.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 134,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Consumer Electronics",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Fitness",
+      "Health & Wellness",
+      "Femtech"
+    ],
+    "tech_stack": [
+      "Consumer",
+      "Consumer Electronics",
+      "Femtech",
+      "Fitness",
+      "Health & Wellness"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/bellabeat",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222197+00:00"
+  },
+  {
+    "id": 590,
+    "name": "Cruise",
+    "tagline": "Self-driving cars.",
+    "description": "Cruise is building the world\u2019s most advanced, all-electric, self-driving car technology to safely connect people with the places, things, and experiences they care about. Self-driving cars will help save lives, reimagine cities, redefine time in transit, and restore freedom of movement for individuals who live in dense urban settings. Acquired by GM in 2016.",
+    "batch": "Winter 2014",
+    "status": "Acquired",
+    "website": "http://getcruise.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 3000,
+    "industry": "Industrials",
+    "subindustry": "Industrials -> Automotive",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Autonomous Delivery",
+      "Machine Learning",
+      "Climate",
+      "AI",
+      "Self-Driving Vehicles"
+    ],
+    "tech_stack": [
+      "AI",
+      "Automotive",
+      "Autonomous Delivery",
+      "Climate",
+      "Industrials",
+      "Machine Learning",
+      "Self-Driving Vehicles"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/cruise",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222201+00:00"
+  },
+  {
+    "id": 445,
+    "name": "Benchling",
+    "tagline": "Unlocking the power of biotech with modern software for modern science",
+    "description": "Biotechnology is rewriting life as we know it, from the medicines we take, to the crops we grow, the materials we wear, and the household goods that we rely on every day. Biotech R&D is radically transforming our world, but to move at the new speed of science, scientists need better technology.\r\n\r\nBenchling\u2019s mission is to unlock the power of biotechnology. The world\u2019s biotech leaders and innovators use our R&D Cloud to power the development of breakthrough products and accelerate time to milestone and market.",
+    "batch": "Summer 2012",
+    "status": "Active",
+    "website": "http://benchling.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 750,
+    "industry": "B2B",
+    "subindustry": "B2B",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "SaaS",
+      "B2B",
+      "Biotech"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Biotech",
+      "SaaS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/benchling",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222204+00:00"
+  },
+  {
+    "id": 542,
+    "name": "Casetext",
+    "tagline": "We make the world's laws free and understandable. ",
+    "description": "Casetext, the most widely used A.I. legal research technology, has been adopted across the legal market from the largest Am Law 100 law firms to solo practices. Its award-winning technology offers both conventional search functionality and its CARA A.I. powered contextual search, focuses on the context of your research to help you find on-point authorities faster. Founded by a team of former litigators from top law firms, as well as Ph.D. data scientists and leading A.I. engineers, Casetext helps legal researchers find the best cases, faster, including many that they would otherwise miss. For more information, visit www.casetext.com or contact our team at contact@casetext.com.",
+    "batch": "Summer 2013",
+    "status": "Acquired",
+    "website": "http://casetext.com",
+    "location": "San Francisco, CA, USA; Remote",
+    "team_size": 50,
+    "industry": "B2B",
+    "subindustry": "B2B -> Legal",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Artificial Intelligence",
+      "Legal"
+    ],
+    "tech_stack": [
+      "Artificial Intelligence",
+      "B2B",
+      "Legal"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/casetext",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222208+00:00"
+  },
+  {
+    "id": 1433,
+    "name": "Bird",
+    "tagline": "The world\u2019s largest omnichannel communications platform",
+    "description": "The world\u2019s largest omnichannel communications platform.\r\n \r\nBird CRM powers communication between businesses and their customers \u2014 across any channel, always with the right context, and on every corner of the planet. Its products and solutions are the foundational building blocks to business communications across preferred channels, like SMS, Voice, WhatsApp, WeChat, Messenger, Email and more. Founded in 2011, Bird connects to billions of devices and is trusted by nearly 20,000 customers worldwide.\r\n \r\nHeadquartered in Amsterdam, Bird operates across nine global hubs \u2014 including Singapore, Dublin, Shanghai, Sydney, London, Bogota and Asuncion \u2014 and is proud to be a \u201cWork Anywhere\u201d company. Its team of 500 employees represent more than 55 nationalities.",
+    "batch": "Summer 2016",
+    "status": "Active",
+    "website": "http://bird.com",
+    "location": "Amsterdam, NH, Netherlands",
+    "team_size": 500,
+    "industry": "B2B",
+    "subindustry": "B2B -> Engineering, Product and Design",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Messaging",
+      "API"
+    ],
+    "tech_stack": [
+      "API",
+      "B2B",
+      "Engineering, Product and Design",
+      "Messaging"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/bird",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222211+00:00"
+  },
+  {
+    "id": 1556,
+    "name": "Brex",
+    "tagline": "Business accounts, corporate cards, and spend management software.",
+    "description": "Brex is the AI-powered spend platform for modern companies, from startups to enterprises. Combining corporate cards, expense management, travel, business accounts, and bill pay, Brex makes it easy to control spend before it happens with unprecedented efficiency and accuracy. Our mission is to empower employees anywhere to make better financial decisions, so we designed our platform to make expenses almost effortless with unrivaled automation of manual expense work and real-time tracking. Brex supports more countries and currencies than any other spend solution. Brex has tens of thousands of customers, including some of the most successful, high-growth companies, such as DoorDash, SeatGeek, Coinbase, ScaleAI, MasterClass, Indeed, Allbirds, and Superhuman.\r\n\r\nBrex offers:\r\n- Corporate cards with 10-20x higher limits\r\n- Business accounts with easy wires, same-day liquidity, fast global payments, and $6M in FDIC insurance\r\n- Reward options that include billboards, offsites, and coaching\r\n- Founder-friendly financial modeling tools\r\n- Special events and masterclasses for founders\r\n- Advanced spend management software as startups grow that includes global capabilities, travel, bill pay and more.\r\n\r\n",
+    "batch": "Winter 2017",
+    "status": "Active",
+    "website": "https://www.brex.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 1000,
+    "industry": "Fintech",
+    "subindustry": "Fintech -> Banking and Exchange",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Fintech"
+    ],
+    "tech_stack": [
+      "Banking and Exchange",
+      "Fintech"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/brex",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222214+00:00"
+  },
+  {
+    "id": 1270,
+    "name": "The Athletic",
+    "tagline": "Subscription sports media.",
+    "description": "The Athletic is a direct-to-consumer digital sports media company committed to helping subscribers experience storytelling in a whole new way. Founded in 2016 and headquartered in San Francisco, The Athletic has over 600 full-time employees and covers more than 250 professional sports and collegiate teams in the US, Canada and the UK. The Athletic\u2019s newsroom has produced thousands of in-depth articles along with more than 120 podcasts and premium video content. The Athletic is a remote-friendly company as we have offices in San Francisco, Los Angeles, London, and Melbourne.",
+    "batch": "Summer 2016",
+    "status": "Acquired",
+    "website": "https://theathletic.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 600,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Content",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Media"
+    ],
+    "tech_stack": [
+      "Consumer",
+      "Content",
+      "Media"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/the-athletic",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222217+00:00"
+  },
+  {
+    "id": 86,
+    "name": "Codecademy",
+    "tagline": "The leading online learning platform for technical skills.",
+    "description": "Working professionals are experiencing their jobs changing amidst the rise of technology and automation threatens over 800 million jobs. At the same time, software is eating the world, disrupting every major industry, and creating millions of new technology jobs that companies are eager to fill. This is the skills gap. Our mission is closing it.\r\n\r\nIn 2011, we changed the face of education by creating free interactive coding courses explored by over 45 million people. As we look to the future, we're focused on helping anyone get the skills they need for the jobs they want.  We aim to bridge the gap: between companies and the workforce, people and their dream jobs. Join one of the most dynamic technology companies in New York that is changing the way the world learns.\r\n\r\nHeadquartered in New York City, our team is filled with highly curious diverse individuals whose backgrounds span tech and education. Our team is passionate about our mission: helping people get the skills they need for the jobs they want. We seek transparency, thrive on feedback, value teamwork, love evolving and never forget it's people first. We enjoy catered lunches together, company outings, guest speakers and long walks on the beach.",
+    "batch": "Summer 2011",
+    "status": "Acquired",
+    "website": "http://codecademy.com",
+    "location": "New York, NY, USA",
+    "team_size": 225,
+    "industry": "Education",
+    "subindustry": "Education",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Education"
+    ],
+    "tech_stack": [
+      "Education"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/codecademy",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222220+00:00"
+  },
+  {
+    "id": 662,
+    "name": "Checkr",
+    "tagline": "People infrastructure for the future of work",
+    "description": "Checkr builds people infrastructure for the future of work. And we believe everyone should have a fair chance to work. That's why we've designed a faster\u2014and fairer\u2014way to screen job seekers. For more information on our mission and products, visit https://checkr.com.",
+    "batch": "Summer 2014",
+    "status": "Active",
+    "website": "http://www.checkr.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 800,
+    "industry": "B2B",
+    "subindustry": "B2B -> Human Resources",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Artificial Intelligence",
+      "Compliance",
+      "HR Tech",
+      "API",
+      "Enterprise Software"
+    ],
+    "tech_stack": [
+      "API",
+      "Artificial Intelligence",
+      "B2B",
+      "Compliance",
+      "Enterprise Software",
+      "HR Tech",
+      "Human Resources"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/checkr",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222224+00:00"
+  },
+  {
+    "id": 429,
+    "name": "Lever",
+    "tagline": "Talent Acquisition Suite that combines ATS + Talent CRM",
+    "description": "Lever is one of the most recognized brands in talent acquisition software for high growth companies. We enable teams to post jobs, source, interview, and hire top talent. We've combined ATS & CRM into a single platform, Lever TRM. Our Talent Acquisition Suite also includes tools for recruitment marketing and analytics: Lever Nurture, Lever Advanced Analytics, and Lever Data Warehouse Sync. Our customers include Netflix, KPMG, Spotify, Talend, Cirque du Soleil, and over 5000 other customers.\r\n\r\nLever has raised $123 million in funding from Apax Digital, Adam Street Partners, Scale Venture Partners, Matrix Partners, and Y Combinator among others. With an overall gender ratio of 50:50, Lever is also fiercely committed to building a team culture that celebrates diversity and inclusion. For more information, visit https://www.lever.co/.",
+    "batch": "Summer 2012",
+    "status": "Acquired",
+    "website": "https://www.lever.co/",
+    "location": "San Francisco, CA, USA",
+    "team_size": 225,
+    "industry": "B2B",
+    "subindustry": "B2B -> Recruiting and Talent",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "SaaS",
+      "Human Resources",
+      "Talent Acquisition"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Human Resources",
+      "Recruiting and Talent",
+      "SaaS",
+      "Talent Acquisition"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/lever",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222227+00:00"
+  },
+  {
+    "id": 1480,
+    "name": "Clipboard",
+    "tagline": "Every shift, Covered.",
+    "description": "Our Why\r\nAt Clipboard, our mission is to uplift as many communities as possible. We do this by connecting professionals with the workplaces that need amazing workers, helping people achieve financial stability for themselves and their families all across the U.S.\r\n\r\nOur How\r\nClipboard is an app-based marketplace where workplaces post calls for help and workers answer. Every year, we help hundreds of thousands of workers fill millions of shifts across the U.S. We\u2019re the leader in Long-Term Care staffing and are rapidly expanding into Home Health, Hospitals, and more.\r\n\r\nOur Team\r\nFounded in 2016, we are a remote-first team of over 1,000 people working to uplift communities across the country.",
+    "batch": "Winter 2017",
+    "status": "Active",
+    "website": "https://www.clipboardworks.com/careers",
+    "location": "San Francisco, CA, USA",
+    "team_size": 1000,
+    "industry": "Consumer",
+    "subindustry": "Consumer",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Marketplace",
+      "Consumer Health Services",
+      "Health Tech",
+      "Healthcare"
+    ],
+    "tech_stack": [
+      "Consumer",
+      "Consumer Health Services",
+      "Health Tech",
+      "Healthcare",
+      "Marketplace"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/clipboard",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222230+00:00"
+  },
+  {
+    "id": 498,
+    "name": "Heap",
+    "tagline": "Captures user interactions with no code to generate analytics.",
+    "description": "Heap automates away the annoying parts of user analytics. No manual event tracking. No messy tracking plans. No custom ETL pipelines. Just insights. For everyone on your team.",
+    "batch": "Winter 2013",
+    "status": "Acquired",
+    "website": "https://heap.io/",
+    "location": "Seattle, WA, USA; San Francisco, CA, USA",
+    "team_size": 388,
+    "industry": "B2B",
+    "subindustry": "B2B -> Analytics",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "SaaS",
+      "Analytics"
+    ],
+    "tech_stack": [
+      "Analytics",
+      "B2B",
+      "SaaS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/heap",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222233+00:00"
+  },
+  {
+    "id": 60,
+    "name": "Sendwave",
+    "tagline": "Instant, no fee international remittances.",
+    "description": "Sendwave's mission is to make sending money as easy and affordable as sending a text. Our app sends transfers securely from North America and Europe to Africa, Asia, and the Americas at great rates.",
+    "batch": "Winter 2012",
+    "status": "Acquired",
+    "website": "https://www.sendwave.com",
+    "location": "Boston, MA, USA; Remote",
+    "team_size": 350,
+    "industry": "Fintech",
+    "subindustry": "Fintech -> Payments",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Fintech",
+      "Payments"
+    ],
+    "tech_stack": [
+      "Fintech",
+      "Payments"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/sendwave",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222236+00:00"
+  },
+  {
+    "id": 12064,
+    "name": "Deel",
+    "tagline": "The all-in-one HR and payroll platform for global teams",
+    "description": "Deel is the all-in-one payroll and HR platform for global teams. Built for the way the world works today, Deel combines HRIS, payroll, compliance, benefits, performance, and equipment management into one seamless platform. With AI-powered tools and a fully owned payroll infrastructure, Deel supports every worker type in 120+ countries\u2014helping businesses scale smarter, faster, and more compliantly. Discover how Deel makes global work simple at deel.com.",
+    "batch": "Winter 2019",
+    "status": "Active",
+    "website": "https://www.deel.com/",
+    "location": "San Francisco, CA, USA; Remote",
+    "team_size": 5000,
+    "industry": "B2B",
+    "subindustry": "B2B -> Finance and Accounting",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Fintech",
+      "SaaS",
+      "B2B",
+      "HR Tech",
+      "Payroll"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Finance and Accounting",
+      "Fintech",
+      "HR Tech",
+      "Payroll",
+      "SaaS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/deel",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222240+00:00"
+  },
+  {
+    "id": 412,
+    "name": "Clever",
+    "tagline": "The platform that powers technology in the classroom.",
+    "description": "Clever is a single platform for all of your digital learning programs. Founded in 2012, Clever was started by educators and technology professionals who knew that schools, teachers, and students could all benefit from the amazing learning software that was available, but key challenges stood in the way of accessing the technology. Today, half of K-12 schools in the U.S. use Clever to give students and teachers single sign-on access for any resource or file they need, and to automate software account setup and updates for district administrators. Clever gives teachers time to teach, helps districts be better informed, and makes using applications in the classroom effortless.\r\n\r\nWe are a team of more than 100 people passionate about education. If you feel the same way, you should see our openings at https://clever.com/about/jobs.",
+    "batch": "Summer 2012",
+    "status": "Acquired",
+    "website": "https://clever.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 210,
+    "industry": "Education",
+    "subindustry": "Education",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Education",
+      "SaaS"
+    ],
+    "tech_stack": [
+      "Education",
+      "SaaS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/clever",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222242+00:00"
+  },
+  {
+    "id": 1058,
+    "name": "Caper",
+    "tagline": "Plug-and-play cashier-less retail powered by computer vision and AI",
+    "description": "Caper focuses on compacting Amazon-Go's technology (image recognition, sensor fusion and artificial intelligence) into a smart shopping cart, allowing each shopper to throw her groceries into the cart and self-checkout without cashiers. The technology is looking to fundamentally transform physical retail and rapidly scale into existing grocery stores.",
+    "batch": "Winter 2016",
+    "status": "Acquired",
+    "website": "https://www.caper.ai/",
+    "location": "",
+    "team_size": 15,
+    "industry": "B2B",
+    "subindustry": "B2B -> Retail",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Artificial Intelligence",
+      "Cashierless Checkout",
+      "Computer Vision",
+      "Retail Tech"
+    ],
+    "tech_stack": [
+      "Artificial Intelligence",
+      "B2B",
+      "Cashierless Checkout",
+      "Computer Vision",
+      "Retail",
+      "Retail Tech"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/caper",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222246+00:00"
+  },
+  {
+    "id": 379,
+    "name": "Reddit",
+    "tagline": "The frontpage of the internet.",
+    "description": "Founded by Steve Huffman and Alexis Ohanian in 2005, Reddit is an online community where users submit, vote, and comment on content, news, and discussions. Nicknamed \"the front page of the internet,\"\u200b Reddit is one of the top ten sites in the United States (source: Alexa), with hundreds of millions of users each month on desktop, mobile web, and our official Android/iOS apps. \r\n\r\nInterested in joining our growing team? Check out about.reddit.com/careers",
+    "batch": "Summer 2005",
+    "status": "Acquired",
+    "website": "http://reddit.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 2000,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Content",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Community",
+      "Social Media",
+      "Social",
+      "Social Network"
+    ],
+    "tech_stack": [
+      "Community",
+      "Consumer",
+      "Content",
+      "Social",
+      "Social Media",
+      "Social Network"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/reddit",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222249+00:00"
+  },
+  {
+    "id": 158,
+    "name": "Fivestars",
+    "tagline": "Customer loyalty and payments platform for small businesses.",
+    "description": "Fivestars is a leading payment and customer loyalty platform for small local businesses. Our mission is to help businesses and communities thrive by turning every transaction into a relationship. \r\n\r\nSince launching in 2011, Fivestars has become a rewarding platform with 60 million users discovering and driving sales to 14,000+ small businesses. We help drive over $3 billion in local sales per year. More than 1 million people sign up monthly to support the local businesses that make our neighborhoods great. \r\n\r\nThe company is backed by Lightspeed, DCM, Menlo Ventures, HarbourVest, and others. \r\n\r\nTogether, let\u2019s #LoveLocal. Visit www.fivestars.com for more information.\r\n",
+    "batch": "Winter 2011",
+    "status": "Acquired",
+    "website": "http://fivestars.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 201,
+    "industry": "B2B",
+    "subindustry": "B2B -> Retail",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Fintech",
+      "Marketplace"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Fintech",
+      "Marketplace",
+      "Retail"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/fivestars",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222252+00:00"
+  },
+  {
+    "id": 307,
+    "name": "Machine Zone",
+    "tagline": "Pioneers of mobile social gaming.",
+    "description": "Live data powers everything we do\u2014from our global, multiplayer mobile games to our mobile ad buying to our live data ecosystem, Satori. MZ is creating new futures for people, enterprises, cities, and countries. The possibilities are endless.",
+    "batch": "Winter 2008",
+    "status": "Acquired",
+    "website": "https://www.mz.com",
+    "location": "Palo Alto, CA, USA",
+    "team_size": 501,
+    "industry": "Consumer",
+    "subindustry": "Consumer -> Gaming",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Gaming"
+    ],
+    "tech_stack": [
+      "Consumer",
+      "Gaming"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/machine-zone",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222255+00:00"
+  },
+  {
+    "id": 1543,
+    "name": "Faire",
+    "tagline": "The global online platform empowering independent retail.",
+    "description": "Faire is an innovative online marketplace that uses machine learning to match local retailers with the brands and products that uniquely fit their stores. We are using the power of technology to connect brands and independent retailers from all over the world, building a thriving community of hundreds of thousands of retailers, which has resulted in over 7 million new connections to date. Faire was founded on the belief that the future of retail is local.\r\n\r\nOur mission is to empower brands and retailers to strengthen the unique character of local communities. Our data-driven approach unburdens retailers from decades-old obstacles by helping find the right products for their shop. Plus, our straight-forward financial terms level the playing field by eliminating inventory risk and providing access to capital\u2014key offerings previously only available to big box chains. For brands, our platform provides powerful sales, marketing, and analytics tools that simplify their business and allow them to focus on what they love: making great products.\r\n",
+    "batch": "Winter 2017",
+    "status": "Active",
+    "website": "https://www.faire.com/",
+    "location": "San Francisco, CA, USA",
+    "team_size": 900,
+    "industry": "B2B",
+    "subindustry": "B2B -> Retail",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Marketplace",
+      "Retail"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Marketplace",
+      "Retail"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/faire",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222258+00:00"
+  },
+  {
+    "id": 482,
+    "name": "Fivetran",
+    "tagline": "The leader in automated data movement",
+    "description": "Fivetran automates data movement out of, into and across cloud data platforms. We automate the most time-consuming parts of the ELT process from extracts to schema drift handling to transformations, so data engineers can focus on higher-impact projects with total pipeline peace of mind. With 99.9% uptime and self-healing pipelines, Fivetran enables hundreds of leading brands across the globe, including Autodesk, Conagra Brands, JetBlue, Lionsgate, Morgan Stanley, and Ziff Davis, to accelerate data-driven decisions and drive business growth. Fivetran is headquartered in Oakland, California, with offices around the world.\u00a0",
+    "batch": "Winter 2013",
+    "status": "Active",
+    "website": "http://fivetran.com",
+    "location": "Oakland, CA, USA",
+    "team_size": 1200,
+    "industry": "B2B",
+    "subindustry": "B2B -> Infrastructure",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "SaaS",
+      "B2B",
+      "Analytics",
+      "Data Engineering"
+    ],
+    "tech_stack": [
+      "Analytics",
+      "B2B",
+      "Data Engineering",
+      "Infrastructure",
+      "SaaS"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/fivetran",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222262+00:00"
+  },
+  {
+    "id": 221,
+    "name": "Optimizely",
+    "tagline": "The first all-in-one operating system for marketing",
+    "description": "At Optimizely, we're on a mission to help people unlock their digital potential. We do that by reinventing how marketing and product teams work to create and optimize digital experiences across all channels. With Optimizely One, our industry-first operating system for marketers, we offer teams flexibility and choice to build their stack their way with our fully SaaS, fully decoupled, and highly composable solution. We help companies around the world orchestrate their entire content lifecycle, monetize every digital experience and experiment across all customer touchpoints \u2013 all through Optimizely One, the leading digital experience platform that powers every phase of the marketing lifecycle through a single, AI-accelerated workflow. \r\n\r\nOptimizely has nearly 1500 employees across our 21 global offices and has 700+ partners. We are proud to help more than 10,000 businesses, including H&M, PayPal, Zoom, and Toyota, enrich their customer lifetime value, increase revenue and grow their brands. At Optimizely, we live each day with a simple philosophy: large enough to serve, small enough to care. Learn more at optimizely.com. ",
+    "batch": "Winter 2010",
+    "status": "Acquired",
+    "website": "http://optimizely.com",
+    "location": "San Francisco, CA, USA",
+    "team_size": 1500,
+    "industry": "B2B",
+    "subindustry": "B2B -> Engineering, Product and Design",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Marketing"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Engineering, Product and Design",
+      "Marketing"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/optimizely",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222265+00:00"
+  },
+  {
+    "id": 595,
+    "name": "Flexport",
+    "tagline": "Platform for global logistics.",
+    "description": "Founded in 2013, we believe trade can move the human race forward. That\u2019s why our mission at Flexport is to make global trade easy for everyone.\r\n\r\nWhat the internet has done for bits and bytes, Flexport is doing for physical goods: giving every business the ability to connect to any customer, wherever they are in the world. That sounds pretty straightforward, but a fragmented and inefficient global supply chain has held the world back from untapped growth and innovation. By connecting everyone in the global economy we can unlock commerce, creativity, and human progress.\r\n\r\nTo do so, we\u2019re building the platform for global logistics\u2014empowering buyers, sellers and their logistics partners with the technology and services they need to grow and innovate. \r\nToday, we work with more than 40,000 customers and their suppliers across industries like manufacturing, retail, electronics, consumer goods, tech, apparel, and beauty. Companies of all sizes\u2014from emerging brands to Fortune 500s\u2014used Flexport technology to move nearly $19B of merchandise across 112 countries in 2021.\r\n\r\nInterested in joining our team? Check out our open job postings on careers site and apply directly today! https://www.flexport.com/careers/jobs/ ",
+    "batch": "Winter 2014",
+    "status": "Active",
+    "website": "https://www.flexport.com/careers/jobs/",
+    "location": "San Francisco, CA, USA",
+    "team_size": 3000,
+    "industry": "B2B",
+    "subindustry": "B2B -> Supply Chain and Logistics",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "SaaS",
+      "Logistics",
+      "Supply Chain"
+    ],
+    "tech_stack": [
+      "B2B",
+      "Logistics",
+      "SaaS",
+      "Supply Chain",
+      "Supply Chain and Logistics"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/flexport",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222268+00:00"
+  },
+  {
+    "id": 244,
+    "name": "WePay",
+    "tagline": "Payments for platform businesses.",
+    "description": "WePay is a multi-party payments API for SMB SaaS, POS Platforms, and Online Marketplaces. It was acquired by JPMorgan Chase in 2018.",
+    "batch": "Summer 2009",
+    "status": "Acquired",
+    "website": "http://wepay.com",
+    "location": "Redwood City, CA, USA",
+    "team_size": 400,
+    "industry": "Fintech",
+    "subindustry": "Fintech -> Payments",
+    "linkedin": "",
+    "twitter": "",
+    "founders": [],
+    "tags": [
+      "Fintech"
+    ],
+    "tech_stack": [
+      "Fintech",
+      "Payments"
+    ],
+    "yc_url": "https://www.ycombinator.com/companies/wepay",
+    "email": "",
+    "scraped_at": "2026-05-22T12:27:31.222272+00:00"
   }
 ]
